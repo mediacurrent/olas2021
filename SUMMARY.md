@@ -3,10 +3,6 @@
 * [Home](README.md)
 * [Local Environment](local.md)
 
-## Components Development
-
-* [About Components](components-development/about-components.md)
-
 ## Drupal
 
 * [Best practices](drupal/practices.md)
@@ -22,3 +18,4 @@
 ## DevOps
 
 * [Getting Started](devops/started.md)
+
