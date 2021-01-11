@@ -20,7 +20,7 @@ We recommend continuing to use Docker and DDEV, but virtual machines created wit
 
 ### Release and deployment <a id="Release-and-deployment"></a>
 
-Docker and DDEV are not heavily involved in the deployment process, but they can be used to simplify it somewhat. 
+Docker and DDEV are not heavily involved in the deployment process, but they can be used to simplify it somewhat.
 
 ### MacOS and Windows Setup
 
@@ -79,6 +79,4 @@ The site will not work at this point because it doesn’t have the database. Pro
 {% hint style="info" %}
 **Working with drush in DDEV**: To execute drush commands in DDEV, prefix them with **ddev .** such as `ddev . drush cr` \(notice the period after ddev\).
 {% endhint %}
-
-
 
