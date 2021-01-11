@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Initial page](README.md)
+* [Home](README.md)
 * [Local Environment](local.md)
 
 ## Components Development
@@ -9,9 +9,9 @@
 
 ## Drupal
 
+* [Best practices](drupal/practices.md)
 * [Components](drupal/components.md)
 * [Performance](drupal/performance.md)
-* [Best practices](drupal/practices.md)
 * [Security](drupal/security.md)
 
 ## Decoupled
@@ -22,4 +22,3 @@
 ## DevOps
 
 * [Getting Started](devops/started.md)
-
