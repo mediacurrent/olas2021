@@ -6,7 +6,7 @@
 ## Drupal
 
 * [Best practices](drupal/practices.md)
-* [Components](drupal/components/README.md)
+* [Components](drupal/components/components.md)
   * [Atomic design](drupal/components/atomic.md)
   * [Best practices](drupal/components/best-practices.md)
   * [Drupal attributes](drupal/components/attributes.md)
