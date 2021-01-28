@@ -23,6 +23,9 @@
 
 * [Full decoupled](decoupled/full/README.md)
   * [React and Gatsby](decoupled/full/react-and-gatsby/README.md)
+    * [JAMStack](decoupled/full/react-and-gatsby/jamstack.md)
+    * [Webpack](decoupled/full/react-and-gatsby/webpack.md)
+    * [JSX](decoupled/full/react-and-gatsby/jsx.md)
     * [Benefits](decoupled/full/react-and-gatsby/benefits.md)
     * [Drawbacks](decoupled/full/react-and-gatsby/drawbacks.md)
     * [Components](decoupled/full/react-and-gatsby/components.md)
