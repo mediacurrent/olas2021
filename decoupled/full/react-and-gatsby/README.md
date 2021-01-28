@@ -41,8 +41,6 @@ Gatsby’s build command should be run when you've added the finishing touches t
 
 If you compare the outputs of the two commands \(gatsby develop vs gatsby build\), you can see that everything \(with the exception of deleting HTML and CSS files\) up until the line that says info bootstrap finished are the same. However, gatsby build runs some additional steps to prepare your site to go live after the bootstrap phase.
 
-![Gatsby development workflow](https://github.com/mediacurrent/psu-training/tree/0a450b33bc9c265c78a69de4b4f222f8232d0c30/gatsby/.gitbook/assets/gatsbyjs%20%281%29.png)
-
 {% hint style="info" %}
 Further reading: [https://www.gatsbyjs.org/](https://www.gatsbyjs.org/)
 {% endhint %}
