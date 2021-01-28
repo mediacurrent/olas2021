@@ -1,4 +1,4 @@
-# Components Best Practices for Drupal
+# Best practices
 
 ## Presenter templates
 
@@ -24,3 +24,4 @@ There are other ways to integrate component with Drupal, such as the [UI Pattern
 ## Passing fields values to components
 
 In the presenter template method you'll quickly discover that when passing the value of a field to your component, Drupal does not give us the raw value of that field, we're instead given a [render array](https://www.drupal.org/docs/8/api/render-api/render-arrays), and when that array is rendered, it includes a lot of default markup that will often get in the way. While we may be tempted to just pluck the value that we want from the render array and pass it to our component, it's best to try and let Drupal fully render the field to avoid cache invalidation issues. We will see examples of this as we build components.
+
