@@ -40,7 +40,6 @@
     * [Button](decoupled/full/react-gatsby/components/button.md)
     * [Working with CSS](decoupled/full/react-gatsby/components/working-with-css.md)
     * [Movie Card](decoupled/full/react-gatsby/components/movie-card.md)
-    * [Progressive Decoupled](decoupled/progressive.md)
     * [Gatsby Link](decoupled/full/react-gatsby/components/gatsby-link.md)
     * [Gatsby Image](decoupled/full/react-gatsby/components/gatsby-image.md)
   * [Data and GraphQL](decoupled/full/react-gatsby/data-graphql/README.md)
@@ -48,6 +47,7 @@
     * [Using the GraphQL playground](decoupled/full/react-gatsby/data-graphql/playground.md)
   * [CreatePages Function](decoupled/full/react-gatsby/createpages/README.md)
     * [Create a template](decoupled/full/react-gatsby/createpages/create-a-template.md)
+* [Progressive Decoupled](decoupled/progressive/README.md)
 
 ## DevOps
 
