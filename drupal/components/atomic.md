@@ -1,5 +1,7 @@
 # Atomic design
 
+![Visual representation of Atomic Design](../../.gitbook/assets/atomic-design.png)
+
 Atomic design is a methodology for creating design systems. Rather than building pages, we build a collection of components or patterns.  There are five distinct levels in atomic design:
 
 1. **Atoms** Atoms are the basic building blocks of matter. Applied to web interfaces, atoms are our HTML tags, such as a form label, an input or a button. Atoms can also include more abstract elements like color palettes, fonts and even more invisible aspects of an interface like animations.
