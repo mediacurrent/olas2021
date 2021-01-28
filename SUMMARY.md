@@ -25,12 +25,13 @@
   * [React and Gatsby](decoupled/full/react-and-gatsby/README.md)
     * [Benefits](decoupled/full/react-and-gatsby/benefits.md)
     * [Drawbacks](decoupled/full/react-and-gatsby/drawbacks.md)
-    * [Components](decoupled/full/components.md)
-    * [GraphQL](decoupled/full/graphql.md)
-    * [Gatsby Link](decoupled/full/gatsby-link.md)
-    * [Gatsby Image](decoupled/full/gatsby-image.md)
+    * [Components](decoupled/full/react-and-gatsby/components.md)
+    * [GraphQL](decoupled/full/react-and-gatsby/graphql.md)
+    * [Gatsby Link](decoupled/full/react-and-gatsby/gatsby-link.md)
+    * [Gatsby Image](decoupled/full/react-and-gatsby/gatsby-image.md)
 * [Progressive Decoupled](decoupled/progressive.md)
 
 ## DevOps
 
 * [Getting Started](devops/started.md)
+
