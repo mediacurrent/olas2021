@@ -51,10 +51,9 @@
 
 ## DevOps
 
-* [Getting Started](devops/started.md)
+* [DevOps](devops/README.md)
 
 ## Resources
 
 * [Gatsby & React Resources](resources/gatsby.md)
 * [Drupal Resources](resources/drupal.md)
-
