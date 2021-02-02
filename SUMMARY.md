@@ -15,8 +15,9 @@
   * [Drupal attributes](drupal/components/attributes.md)
   * [Twig Blocks](drupal/components/twig-blocks.md)
   * [Component architecture](drupal/components/architecture.md)
-  * [Building Components](drupal/components/building-components.md)
-  * [Integrating Components](drupal/components/integrating-components.md)
+  * [Building Components](drupal/components/building/README.md)
+    * [Card Component](drupal/components/building/card.md)
+  * [Integrating Components](drupal/components/integrating/README.md)
 * [Performance](drupal/performance.md)
 * [Security](drupal/security.md)
 
@@ -58,4 +59,3 @@
 
 * [Gatsby & React Resources](resources/gatsby.md)
 * [Drupal Resources](resources/drupal.md)
-
