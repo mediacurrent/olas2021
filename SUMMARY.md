@@ -16,8 +16,11 @@
   * [Twig Blocks](drupal/components/twig-blocks.md)
   * [Component architecture](drupal/components/architecture.md)
   * [Building Components](drupal/components/building/README.md)
-    * [Card Component](drupal/components/building/card.md)
+    * [Card](drupal/components/building/card.md)
+    * [Latest blogs](drupal/components/building/blog.md)
   * [Integrating Components](drupal/components/integrating/README.md)
+    * [Card](drupal/components/integrating/card.md)
+    * [Latest blogs](drupal/components/integrating/blog.md)
 * [Performance](drupal/performance.md)
 * [Security](drupal/security.md)
 
