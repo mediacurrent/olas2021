@@ -15,6 +15,7 @@
   * [Drupal attributes](drupal/components/attributes.md)
   * [Twig Blocks](drupal/components/twig-blocks.md)
   * [Component architecture](drupal/components/architecture.md)
+  * [Building Components](drupal/components/building-components.md)
   * [Integrating Components](drupal/components/integrating-components.md)
 * [Performance](drupal/performance.md)
 * [Security](drupal/security.md)
