@@ -1,5 +1,6 @@
-# Gatsby and React Resources
+# Drupal Resources
 
-### Gatsby with Drupal
+## Gatsby with Drupal
 
 * [Umami Food Magazine Site](https://using-drupal.gatsbyjs.org/)
+

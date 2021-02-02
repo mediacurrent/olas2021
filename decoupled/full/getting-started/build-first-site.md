@@ -1,10 +1,10 @@
-# Build your first Gatsby site
+# Building first Gatsby site
 
 ## Gatsby CLI <a id="docs-internal-guid-337bec8f-7fff-6cb1-6ffc-7492002cd7e0"></a>
 
 To get started on your first Gatsby site you need to be somewhat comfortable using the command line and have Node and Git installed. The Gatsby CLI tool lets you quickly create new Gatsby-powered sites and run commands for developing Gatsby sites. It is a published npm package.
 
-The Gatsby CLI is available via npm and should be installed globally by running 
+The Gatsby CLI is available via npm and should be installed globally by running
 
 ```bash
 npm install -g gatsby-cli

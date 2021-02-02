@@ -1,4 +1,4 @@
-# Component structure
+# Gatsby component structure
 
 * All of the components created in this training will be housed under the **src/components** directory. Each will have it’s own `index.js` and `styles.module.scss` file.
 * The `index.js` files for the components will be where we use [JSX](https://reactjs.org/docs/introducing-jsx.html) for the markup as well any javascript we may need.

@@ -1,4 +1,4 @@
-# Project structure
+# Gatsby project structure
 
 Now that you know how to start a Gatsby site from scratch, let’s pull down our more fleshed out repo with the project we will be working from for the remainder of this training, to save us some time.
 

@@ -1,4 +1,4 @@
-# createPages Function
+# CreatePages Function
 
 The `createPages` function is probably going to be your first foray out of just the **gatsby-config** file and into the meat of Gatsby’s API. The `gatsby-node.js` file is where most of a developer’s interaction with Gatsby’s API takes place. Let’s look at how we are building a page for each of our movies in Nitflex:
 

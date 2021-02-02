@@ -1,4 +1,4 @@
-# About Components
+# Components
 
 ## _Everything in Gatsby is built using components._
 
