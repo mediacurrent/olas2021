@@ -10,7 +10,7 @@ This is a custom training workshop by [Mediacurrent.](https://mediacurrent.com)
    1. [Progressive Decoupled](decoupled/progressive.md)
    2. [Full Decoupled with React and Gatsby](decoupled/full/)
 4. [DevOps](devops/started.md)
-5. Drupal performance and security
+5. Drupal [performance](drupal/performance.md) and [security](drupal/security.md)
 
 
 
