@@ -6,6 +6,7 @@
 ## Drupal
 
 * [Best practices](drupal/practices/README.md)
+  * [Overview](drupal/practices/overview.md)
   * [Coding Standards](drupal/practices/coding-standards.md)
   * [Module Development](drupal/practices/module-development.md)
   * [Config Management](drupal/practices/config-management.md)
