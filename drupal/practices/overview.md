@@ -1,7 +1,6 @@
 # Overview
 
-* [Overview](/olas2021/drupal/practices/overview)
-* [Environments](drupal/practices/environments.md)
+* [Environments](olas2021/drupal/practices/environments)
 * [Git](drupal/practices/git.md)
 * [Drush](drupal/practices/drush.md)
 * [Composer](drupal/practices/composer.md)
