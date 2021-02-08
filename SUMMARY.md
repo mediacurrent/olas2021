@@ -6,7 +6,6 @@
 ## Drupal
 
 * [Best practices](drupal/practices/README.md)
-  * [Overview](drupal/practices/overview.md)
   * [Environments](drupal/practices/environments.md)
   * [Git](drupal/practices/git.md)
   * [Drush](drupal/practices/drush.md)
