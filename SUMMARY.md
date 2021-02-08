@@ -9,6 +9,7 @@
   * [Coding Standards](drupal/practices/coding-standards.md)
   * [Module Development](drupal/practices/module-development.md)
   * [Config Management](drupal/practices/config-management.md)
+  * [Services](drupal/practices/services.md)
 * [Components](drupal/components/README.md)
   * [Atomic design](drupal/components/atomic.md)
   * [Best practices](drupal/components/best-practices.md)
