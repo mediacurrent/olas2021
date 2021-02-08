@@ -52,7 +52,7 @@ To handle patches with composer, you'll need to require the following library:
 composer require cweagans/composer-patches
 ```
 
-Once that's in place, add the following instead the `"extra"` property in your composer.json file:
+Once that's in place, add the following inside the `"extra"` property in your composer.json file:
 
 ```json
 "composer-exit-on-patch-failure": true,
