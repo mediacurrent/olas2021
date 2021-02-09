@@ -20,6 +20,16 @@ composer require drupal/module_name
 
 For example, `composer require drupal/migrate_plus`. You can also install specific versions using semantic version constraints, such as `composer require drupal/migrate_plus:~4.0`
 
+# Adding Drush
+
+As of Drush 8, the recommended way of using Drush is to have a project-specific version of it installed in the composer.json for the project. The `drupal/recommended-project` package used to create the project doesn't include drush, so you'll want to add the following to the "require" section of composer.json:
+
+```json
+"drush/drush": "^9.7.1 | ^10.0.0"
+```
+
+After that's in place, delete your `composer.lock` file and run `composer update` to add Drush to the project.
+
 # Updating modules
 
 All packages in the project can be updated with the following command:
