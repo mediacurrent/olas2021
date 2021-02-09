@@ -60,7 +60,11 @@
     * [Using the GraphQL playground](decoupled/full/data-graphql/playground.md)
   * [CreatePages Function](decoupled/full/createpages/README.md)
     * [Create a template](decoupled/full/createpages/create-a-template.md)
-* [Progressive Decoupled](decoupled/progressive.md)
+* [Progressive Decoupled](decoupled/progressive/README.md)
+  * [Benefits and Drawbacks](decoupled/progressive/benefits-drawbacks.md)
+  * [JSON:API](decoupled/progressive/jsonapi.md)
+  * [Code Mixing](decoupled/progressive/code-mixing.md)
+  * [Tips](decoupled/progressive/tips.md)
 
 ## DevOps
 
