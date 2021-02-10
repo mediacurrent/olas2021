@@ -345,7 +345,15 @@ class LoremIpsumForm extends ConfigFormBase {
 
 # Defining custom field types, widgets, and formatters
 
+To create a custom field, you'll want to follow the basic structure used on the [Creating custom field types, widgets, and formatters](https://www.drupal.org/docs/creating-custom-modules/creating-custom-field-types-widgets-and-formatters) page on Drupal.org. Some high level best practices to keep in mind for fields:
+
+- Search to see if there's a contributed module solution for your field type first. The majority of use cases have already been solved by the community, and this can be a huge time saver.
+- For some more complicated fields you may be able to use another solution such as Paragraphs or Field Groups to combine several fields into an entity or group, rather than making a field type with multiple inputs.
+- Fields in Drupal 8 are implemented using the Plugins API rather than hooks. For each field you'll need to define a field item, a field formatter, and a field widget.
+
 # Using event subscribers
+
+
 
 # Writing tests
 
