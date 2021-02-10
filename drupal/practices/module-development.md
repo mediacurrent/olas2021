@@ -125,3 +125,17 @@ foreach ($results as $row) {
 ## Use dependency injection in controllers and object-oriented code
 
 When working directly inside a class' code, you can instead use Dependency Injection. For a detailed example of how to use dependency injection, visit the [Dependency Injection for a Form](https://www.drupal.org/docs/drupal-apis/services-and-dependency-injection/dependency-injection-for-a-form) page.
+
+# Using hooks to alter behavior
+
+# Defining custom pages and blocks
+
+# Defining settings forms or other forms
+
+# Defining custom field types, widgets, and formatters
+
+# Using event subscribers
+
+# Writing tests
+
+# Creating and attaching libraries (CSS and JS)
