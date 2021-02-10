@@ -1,4 +1,4 @@
-The following best practices can guide you in your module development process:
+The following best practices can guide you in your module development process. In addition, [Drupal.org has detailed documentation](https://www.drupal.org/docs/creating-custom-modules) on building custom modules.
 
 # Use the `custom` subdirectory
 
@@ -66,3 +66,62 @@ required: true
 # version: 1.0
 # project: 'hello_world'
 ```
+
+# Avoid writing custom modules and code when possible
+
+In general, it requires less maintenance to use a contributed module when possible, as long as that module is in a relatively stable beta or release state. If that's not possible, custom modules should ideally be written in a re-usable manner so that they can either become new contributed modules or become part of an internal private module that can be re-used across projects to reduce work efforts in the future.
+
+If neither of those cases are possible, a new custom module should be developed.
+
+# Adhere to Drupal code standards and use tests to confirm
+
+Developers should follow Drupal [code standards](https://mediacurrent.gitbook.io/olas2021/drupal/practices/coding-standards) at all times. Code editors such as PhpStorm and VS Code both have settings or extensions to allow those standards to be run directly in the editor, such as every time a file is saved. In addition, projects should include the Coder project and then that can be configured to run on both git commits and as part of automated testing pipelines in case anything was missed by the developer's code editor.
+
+# Utilize configuration management
+
+If your module includes custom configuration settings, you should include default configuration for those settings in your `config/install` directory of the module.
+
+# Utilize caching
+
+Drupal 8 has a very robust caching system that can be used in a number of ways. For example:
+
+- For things such as heavy database queries or access tokens on API connections, you can cache those results for faster access on subsequent runs.
+- Blocks, forms, and custom render arrays all benefit greatly from implementing cache tags and contexts that allow you to more easily target them for accurate cache invalidation.
+- If using a CDN caching layer such as CloudFlare, it's often beneficial to disable Drupal's page cache and rely on Drupal's dynamic page cache instead, in combination with the CDN caching layer taking the place of the static page cache.
+
+# Never hack Drupal core or contributed modules
+
+As a rule, you should never hack custom changes into Drupal core or contributed modules. In scenarios where you need to implement a customization for either core or a contributed module, you should instead create a patch and apply it via compoaser.
+
+# Use render arrays and Twig templates
+
+In Drupal 8, custom templates can be defined with hook_theme(), which will then allow you to make custom render arrays to pass data to your custom Twig templates. This can be especially useful for scenarios such as custom blocks or custom queries that aren't built with Views. In most cases, your rendered controllers or blocks should return a render array rather than raw HTML created by calling Drupal's internal renderer; doing this will allow caching to bubble up to higher contexts appropriately and allow for modifications of those render arrays as needed.
+
+# Use object-oriented programming
+
+A fundamental change in Drupal 8 from earlier versions is its shift to using object-oriented programming principles. The [Services and dependency injection in Drupal 8+](https://www.drupal.org/docs/drupal-apis/services-and-dependency-injection/services-and-dependency-injection-in-drupal-8) page on Drupal.org goes into great detail on how to utilize the two concepts.
+
+As a quick summary, services are best suited for procedural code while dependency injection is suitable for usage in controllers or other object-oriented code.
+
+## Use services in procedural code
+
+When working with procedural code (such as hooks in the .module file), you can access object-oriented services using the `\Drupal::service('service.id')` method. [A full list of services for Drupal 9 can be found here](https://api.drupal.org/api/drupal/services/9.2.x).
+
+For example, to connect to the database and execute select queries, you can use code similar to the following:
+
+```php
+$connnection = \Drupal::service('database');
+$query = $connection->select('redirect', 'redirect')
+  ->addField('redirect', 'redirect_source__path', 'source')
+  ->addField('reidrect', 'redirect_redirect__uri', 'destination');
+$results = $query->fields('redirect', ['status_code'])
+  ->condition('redirect.redirect_source__path', 'http://%', 'NOT LIKE')
+  ->execute();
+foreach ($results as $row) {
+  echo "Source: {$row->source}, Destination: {$row->destination}";
+}
+```
+
+## Use dependency injection in controllers and object-oriented code
+
+When working directly inside a class' code, you can instead use Dependency Injection. For a detailed example of how to use dependency injection, visit the [Dependency Injection for a Form](https://www.drupal.org/docs/drupal-apis/services-and-dependency-injection/dependency-injection-for-a-form) page.
