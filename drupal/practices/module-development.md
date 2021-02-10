@@ -353,8 +353,35 @@ To create a custom field, you'll want to follow the basic structure used on the 
 
 # Using event subscribers
 
+See the [Subscribe to and dispatch events](https://www.drupal.org/docs/creating-custom-modules/subscribe-to-and-dispatch-events) page on Drupal.org for a detailed breakdown of creating and using event subscribers.
 
+Event subscribers can be thought of as an object-oriented approach to the same issue that hooks have solved in Drupal previously. Not all hooks have been converted into event subscribers, but a substantial portion of them are available there now as well.
+
+## Event Subscribers
+
+Your event subscribers are effectively similar to hooks. Also known as listeners, event subscribers are callable methods or functions that react to an event being propagated by the Event Registry.
+
+## Event Registry
+
+The event registry is where event subscribers are collected and sorted. In Drupal 7, this was handled in the `cache_bootstrap` bin under the `module_implements` id.
+
+## Event Dispatcher
+
+The event dispatcher is the mechanism that triggers events and dispatches them throughout the system. In Drupal 7, this would have been the `module_invoke_all()` function.
+
+## Event Context
+
+Event contexts are used to provide specific data to event subscribers, such as simple values or complex classes with relevant data. In Drupal 7, this would have been equivalent to parameters passed to the hook.
 
 # Writing tests
+
+Automated testing will be discussed in more detail in the DevOps portion of the training, but Drupal.org does have a [detailed documentation](https://www.drupal.org/docs/automated-testing) on creating tests, such as [this article about functional tests](https://www.drupal.org/docs/creating-custom-modules/testing-a-drupal-module).
+
+There are several [different kinds of automated tests](https://www.drupal.org/docs/testing/types-of-tests) for various scenarios:
+
+- **Unit Tests** - Unit tests without and with a database connection. For detailed identification of bugs in your code and building a logical application structure.
+- **Kernel Tests** - Kernel tests sit between Unit tests which allows them to interact with the Drupal application in a meaningful way, but they allow the test to only utilize the aspects of Drupal required for the test to function.
+- **Functional Tests** - This type of testing is often called System or Functional testing because it tests on the complete system. Drupal 8 ships with two types: BrowserTestBase and JavascriptTestBase.
+- External frameworks, such as Behat
 
 # Creating and attaching libraries (CSS and JS)
