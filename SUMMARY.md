@@ -5,7 +5,7 @@
 
 ## Drupal
 
-* [Best practices](drupal/practices/README.md)
+* [Drupal practices](drupal/practices/README.md)
   * [Environments](drupal/practices/environments.md)
   * [Git](drupal/practices/git.md)
   * [Composer](drupal/practices/composer.md)
