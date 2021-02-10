@@ -16,6 +16,8 @@ Once coder has been installed to your project, you can use it to test the projec
 
 That is a very verbose command to remember however, so it can be helpful to place a more readily executable version inside a script. For instance, the following bash script could be placed in a new `tests` directory beside the `web` docroot at the root of the repo. Once that's been created, you can run tests with `./tests/code-sniffer.sh ./web` from the root of the repo.
 
+## code-sniffer.sh
+
 ```bash
 #!/bin/bash -e
 
