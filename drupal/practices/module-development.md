@@ -253,6 +253,96 @@ class HelloBlock extends BlockBase {
 
 # Defining settings forms or other forms
 
+Custom forms in Drupal are defined with a Form class that includes several important methods, such as the Build method. Drupal.org includes [an excellent example](https://www.drupal.org/docs/creating-custom-modules/module-config-settings-form) of making an admin configuration form for a module.
+
+In this example, we'll be defining a form at `<module_name>/src/Form/LoremIpsumForm.php`. The example below includes additional inline comments for each major section.
+
+In addition to this example of a configuration form that's extended from ConfigFormBase, you can also create a form usable in any other context by extending the FormBase class instead. See the [Dependency Injection for a Form](https://www.drupal.org/docs/drupal-apis/services-and-dependency-injection/dependency-injection-for-a-form) page for an example of that configuration.
+
+```php
+<?php
+
+namespace Drupal\loremipsum\Form;
+
+use Drupal\Core\Form\ConfigFormBase;
+use Drupal\Core\Form\FormStateInterface;
+
+class LoremIpsumForm extends ConfigFormBase {
+
+  // getFormId() defines the form's machine name.
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getFormId() {
+    return 'loremipsum_form';
+  }
+
+  // The buildForm() method defines the form's initial state and fields.
+
+  /**
+   * {@inheritdoc}
+   */
+  public function buildForm(array $form, FormStateInterface $form_state) {
+    // Form constructor.
+    $form = parent::buildForm($form, $form_state);
+    // Default settings.
+    $config = $this->config('loremipsum.settings');
+
+    // Page title field.
+    $form['page_title'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Lorem ipsum generator page title:'),
+      '#default_value' => $config->get('loremipsum.page_title'),
+      '#description' => $this->t('Give your lorem ipsum generator page a title.'),
+    ];
+    // Source text field.
+    $form['source_text'] = [
+      '#type' => 'textarea',
+      '#title' => $this->t('Source text for lorem ipsum generation:'),
+      '#default_value' => $config->get('loremipsum.source_text'),
+      '#description' => $this->t('Write one sentence per line. Those sentences will be used to generate random text.'),
+    ];
+
+    return $form;
+  }
+
+  // The validateForm() method is called prior to submit and handles form errors.
+
+  /**
+   * {@inheritdoc}
+   */
+  public function validateForm(array &$form, FormStateInterface $form_state) {
+
+  }
+
+  // The submitForm() method is called when the form successfully submits.
+
+  /**
+   * {@inheritdoc}
+   */
+  public function submitForm(array &$form, FormStateInterface $form_state) {
+    $config = $this->config('loremipsum.settings');
+    $config->set('loremipsum.source_text', $form_state->getValue('source_text'));
+    $config->set('loremipsum.page_title', $form_state->getValue('page_title'));
+    $config->save();
+    return parent::submitForm($form, $form_state);
+  }
+
+  // The getEditableConfigNames() is used to retrieve config names related to the form.
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function getEditableConfigNames() {
+    return [
+      'loremipsum.settings',
+    ];
+  }
+
+}
+```
+
 # Defining custom field types, widgets, and formatters
 
 # Using event subscribers
