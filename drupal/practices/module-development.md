@@ -159,6 +159,98 @@ For example, variables passed to a twig template for a node can be modified with
 
 # Defining custom pages and blocks
 
+## Defining pages
+
+See also: https://www.drupal.org/docs/creating-custom-modules/create-a-custom-page
+
+There are two steps to create a custom page. First, you'll need to define a route in `<module_name>.routing.yml` and then define a controller in `<module_name>/src/Controller/ExampleController.php`.
+
+### Declaring routes
+
+```yaml
+olas.my_page:
+  path: '/mypage/page'
+  defaults:
+    _controller: '\Drupal\olas\Controller\OlasController::myPage'
+    _title: 'My first page in D8'
+  requirements:
+    _permission: 'access content'
+```
+
+Each route has the following parts:
+- **olas.my_page** - The machine name of the route, in this case, `olas.my_page`. Follow the format `<module_name>.<route_name>`
+- **path** - The path to the page on your site (must include the leading `/`)
+- **defaults** - The page (_controller) and title (_title) callbacks.
+- **requirements** - Conditions for the page to be displayed, such as permissions, dependency modules, or other conditions.
+
+### Adding a controller
+
+Page callbacks are handled by controllers in Drupal 8 and 9. At minimum, the method that your route uses for the callback must be a public method that returns a renderable array or response object.
+
+Building off of the prior route example, this example controller could be placed in `olas/src/Controller/OlasController.php` for our sample Olas module.
+
+```php
+<?php
+namespace Drupal\olas\Controller;
+
+use Drupal\Core\Controller\ControllerBase;
+
+/**
+ * Provides route responses for the Olas module.
+ */
+class OlasController extends ControllerBase {
+
+  /**
+   * Returns a simple page.
+   *
+   * @return array
+   *   A simple renderable array.
+   */
+  public function myPage() {
+    return [
+      '#markup' => 'Hello, world',
+    ];
+  }
+
+}
+```
+
+## Defining blocks
+
+Blocks in Drupal 8 and 9 are instances of the block plugin. A [detailed walkthrough of creating custom blocks](https://www.drupal.org/docs/creating-custom-modules/creating-custom-blocks) can be found on Drupal.org
+
+At it's most basic level, a block should be a class that's defined in `<module_name>/src/Plugin/Block/<ClassName>.php`. For example, the following block could be defined with the filename `HelloBlock.php`:
+
+```php
+<?php
+
+namespace Drupal\hello_world\Plugin\Block;
+
+use Drupal\Core\Block\BlockBase;
+
+/**
+ * Provides a 'Hello' Block.
+ *
+ * @Block(
+ *   id = "hello_block",
+ *   admin_label = @Translation("Hello block"),
+ *   category = @Translation("Hello World"),
+ * )
+ */
+class HelloBlock extends BlockBase {
+
+  /**
+   * {@inheritdoc}
+   */
+  public function build() {
+    return [
+      '#markup' => $this->t('Hello, World!'),
+    ];
+  }
+
+}
+```
+
 # Defining settings forms or other forms
 
 # Defining custom field types, widgets, and formatters
