@@ -77,6 +77,31 @@ If neither of those cases are possible, a new custom module should be developed.
 
 Developers should follow Drupal [code standards](https://mediacurrent.gitbook.io/olas2021/drupal/practices/coding-standards) at all times. Code editors such as PhpStorm and VS Code both have settings or extensions to allow those standards to be run directly in the editor, such as every time a file is saved. In addition, projects should include the Coder project and then that can be configured to run on both git commits and as part of automated testing pipelines in case anything was missed by the developer's code editor.
 
+# Include docblock commments
+
+In addition to inline and multiline comments, you should take advantage of [Drupal's support for docblock](https://www.drupal.org/docs/develop/standards/api-documentation-and-comment-standards#s-notes-and-standards) comments and document your functions, classes, and other constructs using the docblock syntax. For example, the following comment could apply to a batch API callback:
+
+```php
+/**
+ * Perform tasks when a batch is complete.
+ *
+ * Callback for batch_set().
+ *
+ * @param bool $success
+ *   A boolean indicating whether the batch operation successfully concluded.
+ * @param int $results
+ *   The results from the batch process.
+ * @param array $operations
+ *   The batch operations that remained unprocessed. Only relevant if $success
+ *   is FALSE.
+ *
+ * @ingroup callbacks
+ */
+function callback_batch_finished($success, $results, $operations) {
+  // Sample code here.
+}
+```
+
 # Utilize configuration management
 
 If your module includes custom configuration settings, you should include default configuration for those settings in your `config/install` directory of the module.
@@ -127,6 +152,10 @@ foreach ($results as $row) {
 When working directly inside a class' code, you can instead use Dependency Injection. For a detailed example of how to use dependency injection, visit the [Dependency Injection for a Form](https://www.drupal.org/docs/drupal-apis/services-and-dependency-injection/dependency-injection-for-a-form) page.
 
 # Using hooks to alter behavior
+
+Drupal provides a large variety of hooks (see [this page](https://api.drupal.org/api/drupal/core%21core.api.php/group/hooks/9.1.x) for the full list) that can be used to alter and extend its behavior in a variety of contexts.
+
+For example, variables passed to a twig template for a node can be modified with `hook_preprocess_node()` or a form could be modified to add additional validation with `hook_form_alter()`.
 
 # Defining custom pages and blocks
 
