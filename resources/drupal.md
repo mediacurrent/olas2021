@@ -6,5 +6,6 @@
 
 ### Other resources
 
-* [Building an automated DDEV-based Drupal environment](https://mariohernandez.io/blog/building-an-automated-ddev-based-drupal-environment)
+* [Building an automated DDEV-based Drupal environment](https://mariohernandez.io/blog/building-an-automated-ddev-based-drupal-environment) \(Blog post\)
+* [Visual Studio Code Settings](https://gist.github.com/shrop/69712d71945972f094d085764b9e0723) \(Github list\)
 
