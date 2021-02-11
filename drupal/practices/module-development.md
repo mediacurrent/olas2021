@@ -151,6 +151,43 @@ foreach ($results as $row) {
 
 When working directly inside a class' code, you can instead use Dependency Injection. For a detailed example of how to use dependency injection, visit the [Dependency Injection for a Form](https://www.drupal.org/docs/drupal-apis/services-and-dependency-injection/dependency-injection-for-a-form) page.
 
+## Defining your own services
+
+To define your own services, you'll need to create a `<module_name>.services.yml` file and include it there. A service follows this format:
+
+```yaml
+services:
+  olas.database:
+    class: Drupal\olas\OlasDatabase
+    arguments: ['@database']
+```
+
+The class should point to the class your service uses, while arguments include any dependencies required by the service. You can also supply other keys like `tags` and `factory` for more advanced services usage.
+
+For the most part, your service class will behave just like any other class you make. One key difference is that in the `__construct()` method for the class, you'll be able to take the dependencies that were passed to the service and assign them to properties in the class. For example, the service above includes the `@database` dependency that could function similar to the following:
+
+```php
+/**
+* Class OlasDatabase.
+*/
+class OlasDatabase {
+ /*
+  * @var \Drupal\Core\Database\Connection $database
+  */
+ protected $database;
+
+ /**
+  * Constructs a new OlasDatabase object.
+  * @param \Drupal\Core\Database\Connection $connection
+  */
+ public function __construct(Connection $connection) {
+   $this->database = $connection;
+ }
+}
+```
+
+In the example above, you could then create additional methods that use the `$this->database` property as if it was the `\Drupal::service('database')` service.
+
 # Using hooks to alter behavior
 
 Drupal provides a large variety of hooks (see [this page](https://api.drupal.org/api/drupal/core%21core.api.php/group/hooks/9.1.x) for the full list) that can be used to alter and extend its behavior in a variety of contexts.
@@ -385,3 +422,35 @@ There are several [different kinds of automated tests](https://www.drupal.org/do
 - External frameworks, such as Behat
 
 # Creating and attaching libraries (CSS and JS)
+
+In Drupal 8, stylesheets (CSS) and JavaScript (JS) should be implemented using libraries. The majority of your project's CSS and JS will likely be in the theme, but there are often scenarios where it's more appropriate to place them in a module. For example, if a particular component needs to function on both the admin theme and the front-end theme, a module is a better place for its code. See [this page](https://www.drupal.org/docs/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-module) on Drupal.org for more information on CSS and JS in Drupal.
+
+In general, adding CSS and JS to Drupal follows this process:
+
+1. Save the CSS and/or JS to a file in your module, such as `<module_name>/css/foobar-layout.css`
+2. Define a library which contains the JS and CSS, along with an dependency declarations
+3. Attach the library to a render array, either via a hook or directly on a custom render array
+
+## Libraries
+
+Libraries are defined in a `<module_name>.libraries.yml` file in your module. For example:
+
+```yaml
+foobar:
+  version: 1.x
+  css:
+    layout:
+      css/foobar-layout.css: {}
+    theme:
+      css/foobar-theme.css: {}
+  js:
+    js/foobar.js: {}
+```
+
+There are five different levels of weight in the CSS section:
+
+- **base** - `Weight -200` - CSS reset/normalize
+- **layout** - `Weight -100` -Arrangement of markup, including grid systems
+- **component** - `Weight 0` - Individual and reusable UI elements
+- **state** - `Weight 100` - Client-side changes to components
+- **theme** - `Weight 200` - Purely visual styling (look and feel)
