@@ -1,4 +1,4 @@
-# Latest Blog Posts
+# Latest blogs
 
 So far we've been building individual components and built them in a way we can re-use them. Well, the time has come to build a list of content where we will re-use most components we've built. Using the designs below, we will build the **Latest Blog Posts** content list. Here are some details about this component:
 
@@ -6,7 +6,7 @@ So far we've been building individual components and built them in a way we can 
 * The entire collection has a heading of "Latest Blog Posts"
 * It uses a button that links users to a page like `/blog`
 
-![](../.gitbook/assets/blog-content.jpg)
+![](https://github.com/mediacurrent/dell_training/tree/b5b572bd304e413ed14487968c53d2874f302827/drupal/components/.gitbook/assets/blog-content.jpg)
 
 ### Exercise: Build the Latest Blog Posts component
 
@@ -269,12 +269,11 @@ As I mentioned earlier, this is a unique component and nothing like we've built 
   margin: 50px auto 0;
   text-align: center;
 }
-
 ```
 {% endtab %}
 {% endtabs %}
 
-The styles are very simple as they only focus on aligning the cards side by side.  All other card-specific styles were written in the card component.
+The styles are very simple as they only focus on aligning the cards side by side. All other card-specific styles were written in the card component.
 
 ## Compiling the code to generate the Latest Blog Posts
 
@@ -289,3 +288,4 @@ While in your theme's root directory, run the following commands in your command
 {% endhint %}
 
 In your browser of choice open the following URL: [http://localhost:3000](http://localhost:3000). You should be able to find the _Latest Blog Posts_ component. The styles we wrote already account for responsive behavior of this component.
+

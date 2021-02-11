@@ -1,6 +1,6 @@
-# Integrating the Card
+# Card
 
-![Default card component](../../.gitbook/assets/card.png)
+![Default card component](https://github.com/mediacurrent/dell_training/tree/b5b572bd304e413ed14487968c53d2874f302827/drupal/.gitbook/assets/card.png)
 
 Our homepage is displaying blog posts that meet the requirements of the Drupal View we created, but they lack styles. As we indicated before, each blog article will be represented by a Card component. Let's integrate the Card so our articles inherit all the attributes of the component.Let's recap the work we've done and what the next steps are:
 
@@ -9,17 +9,17 @@ Our homepage is displaying blog posts that meet the requirements of the Drupal V
 3. We created a Drupal View to generate the blog listing sections in our homepage
 4. Finally, we created several blog posts to populate the homepage
 
-#### Next steps:
+### Next steps:
 
 We'll get back to the full view of a blog post later, for now we are going to focus on associating the Card component with the Teaser view mode, and the Card Wide variant with the Featured view mode. How do we do this? The answer is Twig template suggestions.
 
-### Exercise: Creating twig templates for blog posts
+## Exercise: Creating twig templates for blog posts
 
 1. In your Drupal site, navigate to the Homepage node
 2. Right-click on any of the Blog posts articles within the _From our blog_ section, and select **Inspect** or **Inspect Element**
 3. Scroll up in the inspector's code until you find the `<article>` element that wraps the entire article you clicked on.  There may be multiple `<article>` tags within each article, but ensure you are looking at the main article wrapper.  See screenshot below \(click on it to zoom in\):
 
-![Example of debugging info for a node](../../.gitbook/assets/node-teaser.png)
+![Example of debugging info for a node](https://github.com/mediacurrent/dell_training/tree/b5b572bd304e413ed14487968c53d2874f302827/drupal/.gitbook/assets/node-teaser.png)
 
 * I've marked a couple of important items in the screenshot above to ensure you are looking at the correct section in the code.
 * **THEME HOOK:** Tells you what entity you are currently looking at.  In this example we are looking at the **node**, which is what we want since we are trying to configure the Blog nodes with the right component.
@@ -30,7 +30,7 @@ We'll get back to the full view of a blog post later, for now we are going to fo
 **IMPORTANT:** To ensure we are all following along with the same article type, please ensure you selected an article from the _From our blog_ collection of articles. This means you should see the word `teaser` somewhere in the list of template names above. If don't see it, close your code inspector and repeat steps 2 & 3 above with a different article.
 {% endhint %}
 
-#### Creating a template suggestion for Blog teaser view mode
+### Creating a template suggestion for Blog teaser view mode
 
 The focus at this point is to create template suggestions for all article nodes that will be displayed in the **Teaser** view mode. So if we look at the list of file name suggestions above we can ignore the top 4 names as those are either related to the full section of content or are extremely specific to only the single article we are looking at \(**node--6\***\).
 
@@ -47,9 +47,9 @@ I know I will be creating other node related template suggestion so I will leave
 
 If you reload the homepage, you shouldn't really notice much difference. However, if you right-click on the same article as you did before and select **Inspect** or **Inspect Element**, and scroll to the `<article>` element, you should see your new template being used by Drupal to render some of the blog nodes. See below for an example:
 
-![Example of using teaser view mode for blog nodes.](../../.gitbook/assets/node-blog-teaser.png)
+![Example of using teaser view mode for blog nodes.](https://github.com/mediacurrent/dell_training/tree/b5b572bd304e413ed14487968c53d2874f302827/drupal/.gitbook/assets/node-blog-teaser.png)
 
-### Integrating the Card component
+## Integrating the Card component
 
 OK, now that our custom twig template is ready, it's time to plug it to our Card component so our blog posts start looking nice.
 
@@ -125,7 +125,7 @@ We'll break the integration process down so we can explain each part of it. You 
 
    Next we are mapping the `image`, `date`, `body_text`, and `tags` variables with Drupal fields for those elements but first we check that the fields are not empty.
 
-7. Time to add the twig blocks for date and tag fields.  Update your template as follows:
+7. Time to add the twig blocks for date and tag fields. Update your template as follows:
 
    ```php
    {% embed '@training_theme/card/card.twig' with
@@ -161,7 +161,7 @@ We'll break the integration process down so we can explain each part of it. You 
    * Next we declare the `card_date` twig block to print the date information.
    * Finally we declare the `tags` twig block to render the tags.
 
-### Full integration code
+## Full integration code
 
 {% tabs %}
 {% tab title="node--blog--teaser.html.twig" %}
@@ -222,13 +222,14 @@ and make use of twig blocks found in such component.
 {% endtab %}
 {% endtabs %}
 
-### Rendering blog nodes as cards in Drupal
+## Rendering blog nodes as cards in Drupal
 
 Now that the card integration is complete, let's take a look at how the blog nodes look in Drupal.
 
 1. After saving all your changes to **node--blog--teaser.html.twig**, clear Drupal's cache
 2. Reload the homepage
 
-### Date format issue
+## Date format issue
 
-The card looks great but it looks like the date format does not match our designs. Also the tags are not styled at all.  Let's fix these two issues.
+The card looks great but it looks like the date format does not match our designs. Also the tags are not styled at all. Let's fix these two issues.
+

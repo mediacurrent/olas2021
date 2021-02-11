@@ -1,8 +1,10 @@
+# Coding Standards
+
 The primary resource for Drupal coding standards can be found at [https://www.drupal.org/docs/develop/standards](https://www.drupal.org/docs/develop/standards). This page is an excellent resource that goes into great detail on a variety of topics and should a part of the onboarding process for developers, and especially so for developers who are unfamiliar with Drupal.
 
-# Automatically Testing Coding Standards
+## Automatically Testing Coding Standards
 
-The [Coder](https://www.drupal.org/project/coder) project includes configurations for the PHP_CodeSniffer library, allowing standards tests with `phpcs` and can automatically fix issues with `phpcbf`. To use Coder, add the following to your project's composer dependencies:
+The [Coder](https://www.drupal.org/project/coder) project includes configurations for the PHP\_CodeSniffer library, allowing standards tests with `phpcs` and can automatically fix issues with `phpcbf`. To use Coder, add the following to your project's composer dependencies:
 
 ```bash
 composer require drupal/coder
@@ -16,7 +18,7 @@ Once coder has been installed to your project, you can use it to test the projec
 
 That is a very verbose command to remember however, so it can be helpful to place a more readily executable version inside a script. For instance, the following bash script could be placed in a new `tests` directory beside the `web` docroot at the root of the repo. Once that's been created, you can run tests with `./tests/code-sniffer.sh ./web` from the root of the repo.
 
-## code-sniffer.sh
+### code-sniffer.sh
 
 ```bash
 #!/bin/bash -e
@@ -74,3 +76,4 @@ if [ -d ${SITE_PATH}/themes/custom ]; then
   find ${SITE_PATH}/themes/custom \( -name "*.theme" -not -path "${SITE_PATH}/themes/custom/*/node_modules/*" \) -print0 | xargs -0 -n1 -P8 php -l 1>/dev/null
 fi
 ```
+
