@@ -2,7 +2,7 @@
 
 A Card component or pattern is a great way to display all sorts of content \(news, blog posts, events, etc.\), and you will see it in many websites nowadays. The card is not typically displayed on its own, although sometimes it is, but its most common use is as a collection of content. For example, we could use a collection of cards to display latest blog posts or upcoming events. In this exercise we will go over how to build an individual card component first, then a collection of cards. One of the biggest advantages of a component-based development process is the fact that you can reuse components without repeating yourself or duplicate code. Let's start.
 
-![Example of a Card component](https://github.com/mediacurrent/dell_training/tree/ee2ffb227893a5b47d6abbf98936effd4bbd319b/drupal/components/.gitbook/assets/card.png)
+![](../../../.gitbook/assets/card.png)
 
 Although we could build the content list components already as a collection of content, a better approach is to first build a single instance of a card component that then we can reuse over and over. Having a single card component available makes it possible to even build other types of content collections.
 
