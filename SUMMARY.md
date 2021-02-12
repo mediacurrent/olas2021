@@ -21,9 +21,15 @@
   * [Drupal attributes](drupal/components/attributes.md)
   * [Twig Blocks](drupal/components/twig-blocks.md)
   * [Component architecture](drupal/components/architecture.md)
-  * [Building Components](drupal/components/card.md)
-  * [Site building](drupal/components/blog.md)
-  * [Integrating Components](drupal/components/card-1.md)
+  * [Building Components](drupal/components/frontend/card.md)
+    <!-- * [Latest blogs](drupal/components/frontend/blog.md) -->
+  * [Site building](drupal/components/build/blog.md)
+    * [View modes](drupal/components/build/viewmodes.md)
+    * [Drupal views](drupal/components/build/views.md)
+    * [Generate content](drupal/components/build/content.md)
+    * [Views reference](drupal/components/build/views-reference.md)
+  * [Integrating Components](drupal/components/integrating/card.md)
+    <!-- * [Latest blogs](drupal/components/integrating/blog.md) -->
 * [Performance](drupal/performance.md)
 * [Security](drupal/security.md)
 
@@ -65,4 +71,3 @@
 
 * [Gatsby & React Resources](resources/gatsby.md)
 * [Drupal Resources](resources/drupal.md)
-
