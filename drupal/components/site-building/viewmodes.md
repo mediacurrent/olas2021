@@ -33,3 +33,4 @@ Managing fields with view modes ensures we are letting Drupal do things the way 
 
 1. Hide the labels of all the fields
 2. Save your changes
+

@@ -1,6 +1,6 @@
-# Adding Views reference to homepage
+# Views reference
 
-Let's add two new fields to the Homepage content type.  These will be views reference fields in order to display the blocks we created in the Blog posts view.
+Let's add two new fields to the Homepage content type. These will be views reference fields in order to display the blocks we created in the Blog posts view.
 
 Be sure to enable the **Views reference field** module before proceeding.
 
@@ -15,7 +15,7 @@ Be sure to enable the **Views reference field** module before proceeding.
 9. **Save** your changes
 10. In Manage display hide the field label.
 
-### **Adding the views block to the homepage**
+## **Adding the views block to the homepage**
 
 1. Edit the existing homepage node
 2. In the **Blog articles** field, type **Blog posts** and select **Blog posts** when displayed
@@ -23,3 +23,4 @@ Be sure to enable the **Views reference field** module before proceeding.
 4. Click **Add another item**
 5. This time select **From our blog** as the **Display ID**
 6. **Save** your node
+
