@@ -1,12 +1,12 @@
-# Integrating the Card
+# Integrating Components
 
-Integrating componens we have built on a design system like Pattern Lab or other can be complex process depending on the data architecture in Drupal and what we expect to render.  However, there are some basic principles that when followed can make this process an easier one.
+Integrating componens we have built on a design system like Pattern Lab or other can be complex process depending on the data architecture in Drupal and what we expect to render. However, there are some basic principles that when followed can make this process an easier one.
 
-The idea of component integration with Drupal is that we achieve a single source of thruth for markup, styles and behavior of comonents.  This single source is the design system \(i.e. Pattern Lab\).  As we learned earlier, using Drupal's presenter templates, or twig template suggestions, we ensure that those templates only job is to pass the data from Drupal to the components.  Since everything else is being handled at the component level \(HTML, CSS, and JavaScript\), our template suggestions end up lean and clean.
+The idea of component integration with Drupal is that we achieve a single source of thruth for markup, styles and behavior of comonents. This single source is the design system \(i.e. Pattern Lab\). As we learned earlier, using Drupal's presenter templates, or twig template suggestions, we ensure that those templates only job is to pass the data from Drupal to the components. Since everything else is being handled at the component level \(HTML, CSS, and JavaScript\), our template suggestions end up lean and clean.
 
 Let's integrate the Card component we previously built in Pattern Lab so our Drupal content can make use them.
 
-![Card component](../../../.gitbook/assets/card.png)
+![Card component](../../.gitbook/assets/card.png)
 
 Our homepage is displaying blog posts that meet the requirements of the Drupal View we created, but they lack styles. As we indicated before, each blog article will be represented by a Card component. Let's integrate the Card so our articles inherit all the attributes of the component.Let's recap the work we've done and what the next steps are:
 
@@ -17,7 +17,7 @@ Our homepage is displaying blog posts that meet the requirements of the Drupal V
 
 ### Next steps:
 
-We are going to focus on associating the Card component with the Teaser view mode.  How do we do this? The answer is Twig template suggestions.
+We are going to focus on associating the Card component with the Teaser view mode. How do we do this? The answer is Twig template suggestions.
 
 ## Exercise: Creating twig templates for blog posts
 
@@ -25,7 +25,7 @@ We are going to focus on associating the Card component with the Teaser view mod
 2. Right-click on any of the Blog posts articles within the _From our blog_ section, and select **Inspect** or **Inspect Element**
 3. Scroll up in the inspector's code until you find the `<article>` element that wraps the entire article you clicked on.  There may be multiple `<article>` tags within each article, but ensure you are looking at the main article wrapper.  See screenshot below \(click on it to zoom in\):
 
-![Example of debugging info for a node](https://github.com/mediacurrent/dell_training/tree/b5b572bd304e413ed14487968c53d2874f302827/drupal/.gitbook/assets/node-teaser.png)
+![](../../.gitbook/assets/node-teaser.png)
 
 * I've marked a couple of important items in the screenshot above to ensure you are looking at the correct section in the code.
 * **THEME HOOK:** Tells you what entity you are currently looking at.  In this example we are looking at the **node**, which is what we want since we are trying to configure the Blog nodes with the right component.
@@ -47,9 +47,7 @@ The focus at this point is to create template suggestions for all article nodes 
 I know I will be creating other node related template suggestion so I will leave the copy of `node.html.twig` unchanged in my /templates folder so I can keep making copies of it.
 {% endhint %}
 
-If you reload the homepage, you shouldn't really notice much difference. However, if you right-click on the same article as you did before and select **Inspect** or **Inspect Element**, and scroll to the `<article>` element, you should see your new template being used by Drupal to render some of the blog nodes. See below for an example:
-
-![Example of using teaser view mode for blog nodes.](https://github.com/mediacurrent/dell_training/tree/b5b572bd304e413ed14487968c53d2874f302827/drupal/.gitbook/assets/node-blog-teaser.png)
+If you reload the homepage, you shouldn't really notice much difference. However, if you right-click on the same article as you did before and select **Inspect** or **Inspect Element**, and scroll to the `<article>` element, you should see your new template being used by Drupal to render some of the blog nodes. The template used by Drupal to render the content now should be **node--blog--teaser.html.twig** and its path should be **/themes/custom/olas\_theme/src/templates/content/**.
 
 ## Integrating the Card component
 
@@ -214,3 +212,4 @@ Now that the card integration is complete, let's take a look at how the blog nod
 ## Date format issue
 
 The card looks great but it looks like the date format does not match our designs. Also the tags are not styled at all. Let's fix these two issues.
+
