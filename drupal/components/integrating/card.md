@@ -1,6 +1,6 @@
 # Card
 
-![Default card component](https://github.com/mediacurrent/dell_training/tree/b5b572bd304e413ed14487968c53d2874f302827/drupal/.gitbook/assets/card.png)
+![Card component](../../../.gitbook/assets/card.png)
 
 Our homepage is displaying blog posts that meet the requirements of the Drupal View we created, but they lack styles. As we indicated before, each blog article will be represented by a Card component. Let's integrate the Card so our articles inherit all the attributes of the component.Let's recap the work we've done and what the next steps are:
 
@@ -232,4 +232,3 @@ Now that the card integration is complete, let's take a look at how the blog nod
 ## Date format issue
 
 The card looks great but it looks like the date format does not match our designs. Also the tags are not styled at all. Let's fix these two issues.
-
