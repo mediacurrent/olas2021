@@ -67,7 +67,7 @@ Most field types above are pretty common \(string, date, image, array\). The tag
 {% tabs %}
 {% tab title="card.twig" %}
 ```php
-{{ attach_library('training_theme/card') }}
+{{ attach_library('olas_theme/card') }}
 
 <article class="card{{ modifier ? ' ' ~ modifier }}{{- attributes ? ' ' ~ attributes.class -}}"
   {{- attributes ? attributes|without(class) -}}>
@@ -266,10 +266,10 @@ In your browser of choice open the following URL: [http://localhost:3000](http:/
 
 When working with Pattern Lab locally it makes sense to use [http://localhost:3000](http://localhost:3000) to view your work. However, if you are viewing your project from a server during development, or want to show your work and progress to a stakeholder or client, this approach will not work. Luckily for us, we can access Pattern Lab using Drupal's URL as follows:
 
-`/themes/custom/training_theme/patternlab/index.html`
+`/themes/custom/olas_theme/patternlab/index.html`
 
 Two things to keep in mind with the path above:
 
-1. The path above is appended to your Drupal's base URL.  For example, if your Drupal's address is [https://dev.pantheon.io](https://dev.pantheon.io), the full URL would become [https://dev.pantheon.io/themes/custom/training\_theme/patternlab/index.html](https://dev.pantheon.io/themes/custom/training_theme/patternlab/index.html)
-2. Replace `training_theme` with your project's theme name if your theme name is different.
+1. The path above is appended to your Drupal's base URL.  For example, if your Drupal's address is https://dev.pantheon.io, the full URL would become https://dev.pantheon.io/themes/custom/training\_theme/patternlab/index.html
+2. Replace `olas_theme` with your project's theme name if your theme name is different.
 
