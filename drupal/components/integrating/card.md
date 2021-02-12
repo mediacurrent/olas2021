@@ -1,4 +1,10 @@
-# Card
+# Integrating the Card
+
+Integrating componens we have built on a design system like Pattern Lab or other can be complex process depending on the data architecture in Drupal and what we expect to render.  However, there are some basic principles that when followed can make this process an easier one.
+
+The idea of component integration with Drupal is that we achieve a single source of thruth for markup, styles and behavior of comonents.  This single source is the design system \(i.e. Pattern Lab\).  As we learned earlier, using Drupal's presenter templates, or twig template suggestions, we ensure that those templates only job is to pass the data from Drupal to the components.  Since everything else is being handled at the component level \(HTML, CSS, and JavaScript\), our template suggestions end up lean and clean.
+
+Let's integrate the Card component we previously built in Pattern Lab so our Drupal content can make use them.
 
 ![Card component](../../../.gitbook/assets/card.png)
 
@@ -6,6 +12,7 @@ Our homepage is displaying blog posts that meet the requirements of the Drupal V
 
 1. We built the Card component
 2. Created a Blog content type with Teaser View Modes
+3. Created a Drupal View to display blog posts on homepage
 4. Finally, we created several blog posts
 
 ### Next steps:
@@ -24,10 +31,6 @@ We are going to focus on associating the Card component with the Teaser view mod
 * **THEME HOOK:** Tells you what entity you are currently looking at.  In this example we are looking at the **node**, which is what we want since we are trying to configure the Blog nodes with the right component.
 * Next I have outlined all the possible template FILE NAME SUGGESTIONS Drupal is telling us we can use for this particular type of node.  We know we are looking at a node as all the template suggestion names start with the word **node--\***.  We can get as specific or general as we need to.
 * Finally, I have pointed out where the current template being used \(`node.html.twig`\) is located.
-
-{% hint style="info" %}
-**IMPORTANT:** To ensure we are all following along with the same article type, please ensure you selected an article from the _From our blog_ collection of articles. This means you should see the word `teaser` somewhere in the list of template names above. If don't see it, close your code inspector and repeat steps 2 & 3 above with a different article.
-{% endhint %}
 
 ### Creating a template suggestion for Blog teaser view mode
 
@@ -141,13 +144,6 @@ We'll break the integration process down so we can explain each part of it. You 
     } only
    %}
 
-     {% block featured_date %}
-     {% endblock featured_date %}
-
-     {% block card_date %}
-       {{ date }}
-     {% endblock card_date %}
-
      {% block tags %}
        {{ tags }}
      {% endblock tags %}
@@ -198,19 +194,6 @@ and make use of twig blocks found in such component.
     "modifier": ""
   } only
 %}
-
-  {#
-  Removes content from featured_date twig block
-  to avoid printing the date twice and in
-  different places.
-  #}
-  {% block featured_date %}
-  {% endblock featured_date %}
-
-  {# Calls card_date twig block. #}
-  {% block card_date %}
-    {{ date }}
-  {% endblock card_date %}
 
   {# Outputs tags. #}
   {% block tags %}

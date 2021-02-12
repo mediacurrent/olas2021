@@ -1,4 +1,4 @@
-# Card
+# Card Component
 
 A Card component or pattern is a great way to display all sorts of content \(news, blog posts, events, etc.\), and you will see it in many websites nowadays. The card is not typically displayed on its own, although sometimes it is, but its most common use is as a collection of content. For example, we could use a collection of cards to display latest blog posts or upcoming events. In this exercise we will go over how to build an individual card component first, then a collection of cards. One of the biggest advantages of a component-based development process is the fact that you can reuse components without repeating yourself or duplicate code. Let's start.
 
