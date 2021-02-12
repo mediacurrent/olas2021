@@ -6,7 +6,7 @@ So far we've been building individual components and built them in a way we can 
 * The entire collection has a heading of "Latest Blog Posts"
 * It uses a button that links users to a page like `/blog`
 
-![](https://github.com/mediacurrent/dell_training/tree/b5b572bd304e413ed14487968c53d2874f302827/drupal/components/.gitbook/assets/blog-content.jpg)
+![](../../../.gitbook/assets/card.png)
 
 ### Exercise: Build the Latest Blog Posts component
 
