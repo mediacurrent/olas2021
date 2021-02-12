@@ -81,7 +81,7 @@ Most field types above are pretty common \(string, date, image, array\). The tag
     {% if heading %}
       {{ title_prefix }}
       {%
-        include '@training_theme/heading/heading.twig' with {
+        include '@olas_theme/heading/heading.twig' with {
           heading: heading
         } only
       %}

@@ -31,7 +31,7 @@ We've declared a twig block \(`card_extra_content`\), in which we can add or rem
 {% tabs %}
 {% tab title="paragraph--card.html.twig" %}
 ```php
-{% embed '@training_theme/card/card.twig' with {
+{% embed '@olas_theme/card/card.twig' with {
     heading: heading,
     image: content.field_image|render|trim is not empty ? content.field_image,
   }

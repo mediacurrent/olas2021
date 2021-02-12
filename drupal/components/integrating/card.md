@@ -37,7 +37,7 @@ The focus at this point is to create template suggestions for all article nodes 
 1. So based on the remaining names after ignoring the first 4, we can select the following name: `node--blog--teaser.html.twig`.
    1. **node** is the Drupal entity we are trying to integrate with
    2. **blog** is the content type \(also an entity\)This names is exactly what we need to style all blog nodes that will be displayed in teaser view mode.
-2. Now that we've selected the template we need, let's create it by making a copy from `core/themes/stable/templates/content/node.html.twig` into your theme's templates directory \(`/themes/custom/training_theme/src/templates/content/`
+2. Now that we've selected the template we need, let's create it by making a copy from `core/themes/stable/templates/content/node.html.twig` into your theme's templates directory \(`/themes/custom/olas_theme/src/templates/content/`
 3. Rename the newly copied template as `node--blog--teaser.html.twig`
 4. Click your Drupal's cache
 
@@ -81,7 +81,7 @@ We'll break the integration process down so we can explain each part of it. You 
 4. Now, let's add an `embed` statement for the Card component:
 
    ```php
-   {% embed '@training_theme/card/card.twig' with { ... } %} {% endembed %}
+   {% embed '@olas_theme/card/card.twig' with { ... } %} {% endembed %}
    ```
 
    Why use `embed` and not `include`? Twig gives us 3 ways to nest or "include" templates/components into other twig templates; `include`, `extends`, and `embed`. Each have their pros/cons. You can [learn more about them](https://github.com/fourkitchens/emulsify/wiki/When-to-use-include,-extends,-and-embed). We need to use `embed` instead of `include` to be able to use the twig blocks we added in the Card component for the `date` and `tags` fields
@@ -89,7 +89,7 @@ We'll break the integration process down so we can explain each part of it. You 
 5. Now let's start mapping the card's variables with Drupal fields or variables.
 
    ```php
-   {% embed '@training_theme/card/card.twig' with
+   {% embed '@olas_theme/card/card.twig' with
     {
       "attributes": attributes,
       "title_prefix": title_prefix,
@@ -106,7 +106,7 @@ We'll break the integration process down so we can explain each part of it. You 
 6. Let's now make use of the `article_title` variable we created above
 
    ```php
-   {% embed '@training_theme/card/card.twig' with
+   {% embed '@olas_theme/card/card.twig' with
     {
       "attributes": attributes,
       "title_prefix": title_prefix,
@@ -128,7 +128,7 @@ We'll break the integration process down so we can explain each part of it. You 
 7. Time to add the twig blocks for date and tag fields. Update your template as follows:
 
    ```php
-   {% embed '@training_theme/card/card.twig' with
+   {% embed '@olas_theme/card/card.twig' with
     {
       "attributes": attributes,
       "title_prefix": title_prefix,
@@ -186,7 +186,7 @@ modifier, title, and url).
 Uses embed to be able to include card component
 and make use of twig blocks found in such component.
 #}
-{% embed '@training_theme/card/card.twig' with
+{% embed '@olas_theme/card/card.twig' with
   {
     "attributes": attributes,
     "title_prefix": title_prefix,

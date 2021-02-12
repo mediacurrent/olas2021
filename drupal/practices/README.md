@@ -11,4 +11,3 @@ In addition to the detailed practices in this book, here are other high-level be
 5. Use Configuration Management and ensure it is always 100% accurate across your site.
 6. Avoid excessive number of modules.  This could result in poor performance of your website, but it could also make it harder to maintain or upgrade your website.  This also includes custom modules.
 7. Follow coding standards.
-

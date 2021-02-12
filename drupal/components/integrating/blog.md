@@ -30,7 +30,7 @@ As we read in the excerpt above, there are usually two views templates using whe
 
 Using the same method as before to create new template suggestions, follow these steps:
 
-1. Copy the `views-view.html.twig` and `views-view-unformatted.html.twig` files from `/core/themes/stable/templates/views/`, and place them into `/themes/custom/training_theme/src/templates/views/`
+1. Copy the `views-view.html.twig` and `views-view-unformatted.html.twig` files from `/core/themes/stable/templates/views/`, and place them into `/themes/custom/olas_theme/src/templates/views/`
 2. Rather than renaming these templates, let's first make copies of them because we will need them again when we work in the **Featured Content** list later on.  Name each of the copies as follows:
    * `views-view--blog-posts--from-our-blog.html.twig` and `views-view-unformatted--blog-posts.html.twig`
    * If you are wondering where these names come from, let's explain:  **blog-posts** is the name we used when we created the Blog Posts view.  **from-our-blog** is the views block machine name.  This is why is important to assign custom machine names that make sense so when is time to create template suggestion, their names also makes sense.  Had we not changed each of our view's blocks machine names we would had ended up with **views-view--blog-posts--block-1.html.twig** as our template name.
@@ -70,7 +70,7 @@ Using the same method as before to create new template suggestions, follow these
   }
 %}
 
-{% embed '@training_theme/from-our-blog/from-our-blog.twig' %}
+{% embed '@olas_theme/from-our-blog/from-our-blog.twig' %}
   {% block blog_items %}
     {{ rows }}
   {% endblock %}

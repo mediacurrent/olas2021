@@ -161,14 +161,14 @@ So the data is ready, let's go ahead and add the markup for the component.
 {% tabs %}
 {% tab title="from-our-blog.twig" %}
 ```php
-{{ attach_library('training_theme/from-our-blog') }}
+{{ attach_library('olas_theme/from-our-blog') }}
 
 <section class="from-our-blog{{ modifier ? ' ' ~ modifier }}{{- attributes ? ' ' ~ attributes.class -}}"
   {{- attributes ? attributes|without(class) -}}>
   {{ title_prefix }}
   {{ title_suffix }}
   {%
-    include '@training_theme/heading/heading.twig' with {
+    include '@olas_theme/heading/heading.twig' with {
       "heading": heading
     } only
   %}
@@ -176,7 +176,7 @@ So the data is ready, let's go ahead and add the markup for the component.
   <div class="from-our-blog__items">
     {% block blog_items %}
       {% for item in items %}
-        {% embed '@training_theme/card/card.twig' with
+        {% embed '@olas_theme/card/card.twig' with
           {
             "image": item.image,
             "heading": item.heading,
@@ -195,7 +195,7 @@ So the data is ready, let's go ahead and add the markup for the component.
   </div>
   <div class="from-our-blog__cta">
     {%
-      include '@training_theme/button/button.twig' with {
+      include '@olas_theme/button/button.twig' with {
         button: cta
       } only
     %}
@@ -288,4 +288,3 @@ While in your theme's root directory, run the following commands in your command
 {% endhint %}
 
 In your browser of choice open the following URL: [http://localhost:3000](http://localhost:3000). You should be able to find the _Latest Blog Posts_ component. The styles we wrote already account for responsive behavior of this component.
-
