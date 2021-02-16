@@ -21,6 +21,7 @@
   * [Drupal attributes](drupal/components/attributes.md)
   * [Twig Blocks](drupal/components/twig-blocks.md)
   * [Component architecture](drupal/components/architecture.md)
+  * [Build a Drupal 8 Theme](drupal/components/theme.md)
   * [Building Components](drupal/components/frontend/README.md)
     * [Card component](drupal/components/frontend/card.md)
     * [Latest posts](drupal/components/frontend/blog.md)
