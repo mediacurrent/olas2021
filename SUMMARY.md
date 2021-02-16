@@ -23,6 +23,7 @@
   * [Component architecture](drupal/components/architecture.md)
   * [Build a Drupal 8 Theme](drupal/components/theme.md)
   * [Building Components](drupal/components/frontend/README.md)
+    * [Heading component](drupal/components/frontend/heading.md)
     * [Card component](drupal/components/frontend/card.md)
     * [Latest posts](drupal/components/frontend/blog.md)
   * [Site building](drupal/components/build/README.md)
