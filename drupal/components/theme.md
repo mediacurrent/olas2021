@@ -14,7 +14,7 @@ The [Mediacurrent theme generator](https://github.com/mediacurrent/theme_generat
 ## Exercise:  Create a new D8 theme
 
 {% hint style="info" %}
-**A PRESENT FOR YOU 🎁** A working theme has been added to this book for your convenience.  All issues identified above have been addressed.  Copy and paste it into your Drupal 8 site.
+**A PRESENT FOR YOU 🎁** A working theme has been added to this training repository for your convenience.  All issues identified above have been addressed.  Copy and paste it into your Drupal 8 site.
 {% endhint %}
 
 [Watch the video tutorial,](https://www.youtube.com/watch?v=cVyA2v-UwSQ&feature=youtu.be) or follow the instructions below.
