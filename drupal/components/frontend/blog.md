@@ -6,7 +6,7 @@ So far we've been building individual components and built them in a way we can 
 * The entire collection has a heading of "Latest Blog Posts"
 * It uses a button that links users to a page like `/blog`
 
-![](../../../.gitbook/assets/card.png)
+![](../../../.gitbook/assets/blog-content.jpg)
 
 ### Exercise: Build the Latest Blog Posts component
 
