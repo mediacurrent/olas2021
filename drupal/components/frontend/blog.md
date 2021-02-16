@@ -1,4 +1,4 @@
-# Latest blogs
+# Latest posts
 
 So far we've been building individual components and built them in a way we can re-use them. Well, the time has come to build a list of content where we will re-use most components we've built. Using the designs below, we will build the **Latest Blog Posts** content list. Here are some details about this component:
 
@@ -288,3 +288,4 @@ While in your theme's root directory, run the following commands in your command
 {% endhint %}
 
 In your browser of choice open the following URL: [http://localhost:3000](http://localhost:3000). You should be able to find the _Latest Blog Posts_ component. The styles we wrote already account for responsive behavior of this component.
+

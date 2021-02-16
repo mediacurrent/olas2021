@@ -24,13 +24,12 @@
   * [Building Components](drupal/components/frontend/README.md)
     * [Card component](drupal/components/frontend/card.md)
     * [Latest posts](drupal/components/frontend/blog.md)
-  * [Site building](drupal/components/build/blog.md)
-    * [View modes](drupal/components/build/viewmodes.md)
-    * [Drupal views](drupal/components/build/views.md)
-    * [Generate content](drupal/components/build/content.md)
-    * [Views reference](drupal/components/build/views-reference.md)
-  * [Integrating Components](drupal/components/integrating/card.md)
-    <!-- * [Latest blogs](drupal/components/integrating/blog.md) -->
+  * [Site building](drupal/components/site-building/README.md)
+    * [View modes](drupal/components/site-building/view-modes.md)
+    * [Drupal views](drupal/components/site-building/drupal-views.md)
+    * [Generate content](drupal/components/site-building/generate-content.md)
+    * [Views reference](drupal/components/site-building/views-reference.md)
+  * [Integrating Components](drupal/components/integrating-components.md)
 * [Performance](drupal/performance.md)
 * [Security](drupal/security.md)
 
@@ -76,3 +75,4 @@
 
 * [Gatsby & React Resources](resources/gatsby.md)
 * [Drupal Resources](resources/drupal.md)
+

@@ -1,4 +1,4 @@
-# Tips for making your life easier
+# Tips
 
 * Consider fully decoupled
 * Drupal blocks/paragraphs can send data attributes down to the component level as props. This is great for static data.
@@ -10,3 +10,4 @@
 {% hint style="info" %}
 Further reading: [A Recipe for an Embedded React Component in Drupal](https://www.mediacurrent.com/blog/recipe-embedded-react-component-drupal/)
 {% endhint %}
+
