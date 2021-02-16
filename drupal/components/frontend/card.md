@@ -270,6 +270,6 @@ When working with Pattern Lab locally it makes sense to use [http://localhost:30
 
 Two things to keep in mind with the path above:
 
-1. The path above is appended to your Drupal's base URL.  For example, if your Drupal's address is [https://dev.pantheon.io](https://dev.pantheon.io), the full URL would become [https://dev.pantheon.io/themes/custom/training\_theme/patternlab/index.html](https://dev.pantheon.io/themes/custom/training_theme/patternlab/index.html)
+1. The path above is appended to your Drupal's base URL.  For example, if your Drupal's address is [https://dev.pantheon.io](https://dev.pantheon.io), the full URL would become [https://dev.pantheon.io/themes/custom/olas_theme/patternlab/index.html](https://dev.pantheon.io/themes/custom/olas_theme/patternlab/index.html)
 2. Replace `olas_theme` with your project's theme name if your theme name is different.
 
