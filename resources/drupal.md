@@ -2,7 +2,7 @@
 
 ## Drupal
 
-* New/Working Drupal 8 Theme
+* [New/Working Drupal 8 Theme](https://github.com/mediacurrent/olas2021/tree/main/drupal/theme)
 ## Gatsby with Drupal
 
 * [Umami Food Magazine Site](https://using-drupal.gatsbyjs.org/)
