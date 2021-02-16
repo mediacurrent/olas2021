@@ -17,9 +17,11 @@ Some components may also include:
 
 ## Exercise: Building the component
 
+We'll leave styles/CSS out of this component for now.
+
 ### Component's data structure
 
-Let's start by first identifying the content for the component. Since this is a title field, we only need a string of text. We'll dive into more complex components in future exercises.
+Let's start by first identifying the content for the component. Since this is a title field, we only need a string of text, but to make this component more flexibile and dynamic, we'll include some options in its data structure.
 
 1. Inside _components_ create a new folder called **heading**
 2. Inside the _heading_ folder create a new file called **heading.json**
@@ -79,7 +81,7 @@ Wow! What's all this? 😮
 
 ### Compiling the code
 
-If Pattern Lab is running you should see the updates to the Heading component.  Otherwise run the commands below:
+If Pattern Lab is running you should see the updates to the Heading component.  Otherwise run the commands below from your theme's root directory:
 
 ```text
 npm run watch
