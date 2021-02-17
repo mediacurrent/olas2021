@@ -26,6 +26,7 @@
     * [Heading component](drupal/components/frontend/heading.md)
     * [Card component](drupal/components/frontend/card.md)
     * [Latest posts](drupal/components/frontend/blog.md)
+    * [Drupal Libraries](drupal/components/frontend/libraries.md)
   * [Site building](drupal/components/build/README.md)
     * [Blog content type](drupal/components/build/blog.md)
     * [View modes](drupal/components/build/viewmodes.md)
