@@ -125,6 +125,38 @@ Most field types above are pretty common \(string, date, image, array\). The tag
 Don't forget to create and attach the Card's library.
 {% endhint %}
 
+### Color updates
+
+{% hint style="info" %}
+**Update Colors:**  Copy the color variables below and override the content of `src/global/colors/_colors.scss`
+{% endhint %}
+
+{% tabs %}
+{% tab title="src/global/colors/\_colors.scss" %}
+```css
+// Standard.
+$color-white: #fff;
+$color-black: #1b2b34;
+
+// Primary.
+$color-mandy: #ec5f67;
+$color-tan-hide: #f99157;
+$color-saffron-mango: #fac863;
+$color-de-york: #99c794;
+$color-tradewind: #5fb3b3;
+$color-danube: rgb(52, 109, 167);
+$color-navy-blue: rgb(8, 48, 88);
+
+// Grays.
+$color-gray-dk: #343d46;
+$color-gray-med: #4f5b66;
+$color-gray-light: #65737e;
+$color-gray-xlt: #a7adba;
+
+```
+{% endtab %}
+{% endtabs %}
+
 ### Component styles
 
 1. Inside the _card_ folder create a new file called **card.scss**
