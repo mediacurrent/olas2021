@@ -79,4 +79,5 @@
 
 * [Gatsby & React Resources](resources/gatsby.md)
 * [Drupal Resources](resources/drupal.md)
+* [Misc](resources/misc.md)
 
