@@ -1,6 +1,6 @@
-# Heading Component
+# Heading component
 
-Following the [Atomic Design](https://bradfrost.com/blog/post/atomic-web-design/)methodology we are going to build a simple component or pattern. The Heading pattern is an atom which prints a string of text as the title for a page, paragraph, or other component.  As we discussed before, most components will need the following files:
+Following the [Atomic Design](https://bradfrost.com/blog/post/atomic-web-design/)methodology we are going to build a simple component or pattern. The Heading pattern is an atom which prints a string of text as the title for a page, paragraph, or other component. As we discussed before, most components will need the following files:
 
 | File type | Purpose |
 | :--- | :--- |
@@ -49,7 +49,6 @@ We just created a JSON object for the heading with properties that include **hea
 * the **title** key is the title's string of text that will become the title of a page or a component.
 * ... and finally, the **url** key, if present, will allow us to wrap the title in an `<a>` tag, to make it a link.
 
-
 ### Component's Markup
 
 Now let's write some HTML to be able to see the Heading component in the browser.
@@ -81,7 +80,7 @@ Wow! What's all this? 😮
 
 ### Compiling the code
 
-If Pattern Lab is running you should see the updates to the Heading component.  Otherwise run the commands below from your theme's root directory:
+If Pattern Lab is running you should see the updates to the Heading component. Otherwise run the commands below from your theme's root directory:
 
 ```text
 npm run watch
@@ -95,3 +94,4 @@ At the bottom of the watch command you will notice a list of URLs. In your brows
 * Inspect your code to see your changes to the Heading pattern.
 
 **Congratulations!** You just built your first reusable component! 🙌 🎉
+

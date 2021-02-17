@@ -10,7 +10,7 @@ In the context of component-based theming, we are going to create a library for 
 **NOTE: Drupal libraries are only intended to work in Drupal**. They have no effect in Pattern Lab. In Pattern Lab we use Gulp tasks to generate the CSS and JavaScript for components.
 {% endhint %}
 
-### Structure of a library
+## Structure of a library
 
 In your editor, open `olas_theme.libraries.yml` \(located in your theme's root\). You will notice the global library already declared which includes all of the global theme styles that apply to all pages on the site \(i.e. typography, brand colors, global styles, etc.\). The global library looks something like this:
 
@@ -34,7 +34,7 @@ global:
 Drupal Asset Libraries are powerful and there is so much more about them. Learn more about [Drupal Libraries](https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module).
 {% endhint %}
 
-### Exercise: Create a new library (Repeat for each component)
+## Exercise: Create a new library \(Repeat for each component\)
 
 Let's create a new Drupal library for the Card component so we can apply all css we've written for it when rendered in Drupal.
 
@@ -53,12 +53,12 @@ card:
 {% endtabs %}
 
 {% hint style="info" %}
-**TIP**:  Mind the indentation in YML files.
+**TIP**: Mind the indentation in YML files.
 {% endhint %}
 
 Libraries are great because Drupal only loads what we need when we need it to avoid having to load assets that our page or component may never use. This helps with the site's performance.
 
-### Attaching a library
+## Attaching a library
 
 Now that the card component's library is ready, we need to make Drupal aware of it so it can use it. We do this by using Twig's `attach_library` function.
 
@@ -79,7 +79,7 @@ The `attach_library` function takes a path parameter which we are declaring by u
 
 With the code above, we are telling Drupal that whenever we render the card component, its library should be attached so the styles for the component can be applied.
 
-#### Rebuild the theme
+### Rebuild the theme
 
 Since we modified the card component by attaching the new library, we need to rebuild the component by running the following command, but first stop any other commands by pressing **Ctrl + C** on your keyboard.
 
@@ -87,7 +87,7 @@ Since we modified the card component by attaching the new library, we need to re
 npm run build
 ```
 
-#### **Clear Drupal's cache**
+### **Clear Drupal's cache**
 
 1. Before Drupal can have access to the new library and its assets, clear Drupal's caches.
 
@@ -96,3 +96,4 @@ From now on for every new component we create in Pattern Lab, we are going to cr
 {% hint style="info" %}
 **More on Drupal Libraries**: [https://www.youtube.com/watch?v=V8hnfxSx4Ck](https://www.youtube.com/watch?v=V8hnfxSx4Ck)
 {% endhint %}
+

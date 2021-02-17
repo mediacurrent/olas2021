@@ -1,4 +1,4 @@
-# From our blog
+# Latest posts
 
 Let's now build a component that makes use of previously built components. Using the designs below, we will build the **From our blog** content list. Here are some details about this component:
 
@@ -273,11 +273,11 @@ The styles are very simple as they only focus on aligning the cards side by side
 
 While in your theme's root directory, run the following commands in your command line and press **Return**
 
-```
+```text
 npm run build
 ```
 
-```
+```text
 npm run watch
 ```
 
@@ -286,3 +286,4 @@ npm run watch
 {% endhint %}
 
 In your browser of choice open the following URL: [http://localhost:3000](http://localhost:3000). You should be able to find the _From our blog_ component. The styles we wrote already account for responsive behavior of this component.
+

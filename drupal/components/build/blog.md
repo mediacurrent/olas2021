@@ -1,8 +1,9 @@
 # Blog content type
 
-We'll build a new content type which we will use to build blog articles.  Blog articles are the content we will display on the homepage.  This means each card in the homepage represents a blog article in a compact view.  We will achieve the Card display using Drupal's View Modes.  More on view modes shortly.
+We'll build a new content type which we will use to build blog articles. Blog articles are the content we will display on the homepage. This means each card in the homepage represents a blog article in a compact view. We will achieve the Card display using Drupal's View Modes. More on view modes shortly.
 
 ## Exercise:  Build the blog content type in Drupal
+
 1. From Drupal's Admin Toolbar, click **Structure \| Content Types**
 2. Click the **Add content type** button
 3. In the _name_ field type **Blog**
@@ -10,7 +11,7 @@ We'll build a new content type which we will use to build blog articles.  Blog a
 5. Under **Default options** leave **Published** checked.  All other check boxes should **not be checked**.
 6. Click the **Save and manage fields** button at the bottom of the page
 
-#### Add the following fields:
+### Add the following fields:
 
 | Field label | Machine name | Field type |
 | :--- | :--- | :--- |
@@ -34,3 +35,4 @@ For the Tags field, set the following configuration:
 * **Reference method**: _Default_
 * _Check the box for_ **Create referenced entities if they don't already exist**
 * _**Vocabulary**:_ Tags
+

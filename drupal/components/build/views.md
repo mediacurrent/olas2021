@@ -31,5 +31,5 @@ To build the _From our blog_ section we are going to use the power of Drupal's v
 
 Your view should look like the image below. _Click on it to zoom in._
 
-![](https://github.com/mediacurrent/olas2021/tree/3b28c0d1dd89b8a2435454b6cf7ddbbd311fdc74/drupal/components/.gitbook/assets/view.png)
+![](../../../.gitbook/assets/view.png)
 

@@ -23,3 +23,4 @@ Be sure to enable the **Views reference field** module before proceeding.
 4. Click **Add another item**
 5. This time select **From our blog** as the **Display ID**
 6. **Save** your node
+

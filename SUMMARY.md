@@ -33,8 +33,7 @@
     * [Drupal views](drupal/components/build/views.md)
     * [Generate content](drupal/components/build/content.md)
     * [Views reference](drupal/components/build/views-reference.md)
-  * [Integrating Components](drupal/components/integrating/card.md)
-    <!-- * [Latest blogs](drupal/components/integrating/blog.md) -->
+  * [Integrating Components](drupal/components/integrating-components.md)
 * [Performance](drupal/performance.md)
 * [Security](drupal/security.md)
 
@@ -80,3 +79,4 @@
 
 * [Gatsby & React Resources](resources/gatsby.md)
 * [Drupal Resources](resources/drupal.md)
+
