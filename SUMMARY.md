@@ -33,10 +33,10 @@
     * [Drupal views](drupal/components/build/views.md)
     * [Generate content](drupal/components/build/content.md)
     * [Views reference](drupal/components/build/views-reference.md)
-  * [Integrating Components](drupal/components/integrating/card.md)
-    * [Date format](drupal/components/integrating/date.md)
-    * [Integrate Tags](drupal/components/integrating/tags.md)
-    * [From our blog](drupal/components/integrating/blog.md)
+  * [Integrating Components](drupal/components/card/README.md)
+    * [Date format](drupal/components/card/date.md)
+    * [Integrate Tags](drupal/components/card/tags.md)
+    * [From our blog](drupal/components/card/blog.md)
 * [Performance](drupal/performance.md)
 * [Security](drupal/security.md)
 
@@ -83,3 +83,4 @@
 * [Gatsby & React Resources](resources/gatsby.md)
 * [Drupal Resources](resources/drupal.md)
 * [Misc](resources/misc.md)
+
