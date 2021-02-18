@@ -1,5 +1,7 @@
 # Integrating the Card
 
+## The Card component
+
 Let's integrate the Card so our blog articles inherit all the attributes of the component. Let's recap the work we've done and what the next steps are:
 
 1. We built the Card component
@@ -7,11 +9,11 @@ Let's integrate the Card so our blog articles inherit all the attributes of the 
 3. We created a Drupal View to generate the blog listing sections in our homepage
 4. Finally, we created several blog posts to populate the homepage
 
-#### Next steps:
+### Next steps:
 
 We'll get back to the full view of a blog post later, for now we are going to focus on associating the Card component with the Teaser view mode. How do we do this? The answer is **Twig template suggestions**.
 
-### Exercise: Creating twig templates for blog posts
+## Exercise: Creating twig templates for blog posts
 
 1. In your Drupal site, navigate to the Homepage node
 2. Right-click on any of the Blog posts articles and select **Inspect** or **Inspect Element**
@@ -25,7 +27,7 @@ We'll get back to the full view of a blog post later, for now we are going to fo
 * Finally, I have pointed out where the current template being used \(`node.html.twig`\) is located.
 
 
-#### Creating a template suggestion for Blog teaser view mode
+### Creating a template suggestion for Blog teaser view mode
 
 The focus at this point is to create template suggestions for all article nodes that will be displayed in the **Teaser** view mode. So if we look at the list of file name suggestions above we can ignore the more specific names that refer to only the single article we are looking at.
 
@@ -44,7 +46,7 @@ If you reload the homepage, you shouldn't really notice much difference. However
 
 ![Example of using teaser view mode for blog nodes.](../../.gitbook/assets/node-blog-teaser.png)
 
-### Integrating the Card component
+## Integrating the Card component
 
 OK, now that our custom twig template is ready, it's time to plug it to our Card component so our blog posts start looking nice.
 
