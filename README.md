@@ -1,4 +1,4 @@
-# Home
+# Custom Drupal Training
 
 This is a custom training workshop by [Mediacurrent.](https://mediacurrent.com)
 

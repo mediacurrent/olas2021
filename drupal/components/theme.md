@@ -27,6 +27,16 @@ nvm install node && node -v > .nvmrc
 
 _The command above will install the latest stable version of NodeJS and create a new hidden file in your project called `.nvmrc` where that version of Node will be declared as the default version for this project._
 
+{% hint style="warning" %}
+_**About NodeJs**:  One problem with using the latest version of_ any _tool is that they sometimes introduce bugs.  This seems to be the case with the latest NodeJS version as of 2/18/2021.  If your **watch** task keeps crashing when you make JSON or Twig changes, try the following:_
+
+1. _Change the version of node in **.nvmrc** to \`_v12.10.0\`
+2. Delete **node\_modules** from the root of your theme
+3. Run **nvm install**
+4. Run **nvm use**
+5. Run **npm install**
+{% endhint %}
+
 * Run the following command:
 
 ```bash

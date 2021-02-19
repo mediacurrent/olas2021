@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Home](README.md)
+* [Custom Drupal Training](README.md)
 * [Local Environment](local.md)
 
 ## Drupal

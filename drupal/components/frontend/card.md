@@ -128,7 +128,7 @@ Don't forget to create and attach the Card's library.
 ### Color updates
 
 {% hint style="info" %}
-**Update Colors:**  Copy the color variables below and override the content of `src/global/colors/_colors.scss`
+**Update Colors:** Copy the color variables below and override the content of `src/global/colors/_colors.scss`
 {% endhint %}
 
 {% tabs %}
@@ -152,7 +152,6 @@ $color-gray-dk: #343d46;
 $color-gray-med: #4f5b66;
 $color-gray-light: #65737e;
 $color-gray-xlt: #a7adba;
-
 ```
 {% endtab %}
 {% endtabs %}
@@ -265,3 +264,4 @@ Two things to keep in mind with the path above:
 
 1. The path above is appended to your Drupal's base URL.  For example, if your Drupal's address is [https://dev.pantheon.io](https://dev.pantheon.io), the full URL would become [https://dev.pantheon.io/themes/custom/olas\_theme/patternlab/index.html](https://dev.pantheon.io/themes/custom/olas_theme/patternlab/index.html)
 2. Replace `olas_theme` with your project's theme name if your theme name is different.
+
