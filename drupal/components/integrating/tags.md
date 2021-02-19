@@ -18,7 +18,7 @@ hidden: true
 4. Add the following code inside `tag-item.twig`
 
 {% tabs %}
-{% tab title="\tag-item.twig" %}
+{% tab title="tag-item.twig" %}
 ```php
 <span{% if attributes %} class="{{ attributes.class }}"{% endif %}
   {{- attributes ? attributes|without(class) -}}>
