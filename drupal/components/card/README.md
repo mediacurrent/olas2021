@@ -1,5 +1,7 @@
 # Integrating Components
 
+### Card Component
+
 Let's integrate the Card so our blog articles inherit all the attributes of the component. Let's recap the work we've done and what the next steps are:
 
 1. We built the Card component

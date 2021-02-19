@@ -225,7 +225,7 @@ As I mentioned earlier, this is a unique component and nothing like we've built 
 .from-our-blog  {
   padding: 0 20px;
 
-  @media screen and (min-width: $bp-xl) {
+  @include breakpoint($bp-xl) {
     padding: 0;
   }
 }
@@ -239,7 +239,7 @@ As I mentioned earlier, this is a unique component and nothing like we've built 
 
   // On larger screens cards are displayed
   // horizontally as a group.
-  @media screen and (min-width: $bp-sm) {
+  @include breakpoint($bp-sm) {
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -248,11 +248,11 @@ As I mentioned earlier, this is a unique component and nothing like we've built 
   .card {
     margin-bottom: 60px;
 
-    @media screen and (min-width: $bp-sm) {
+    @include breakpoint($bp-sm) {
       flex: 0 0 45%;
     }
 
-    @media screen and (min-width: $bp-lg) {
+    @include breakpoint($bp-lg) {
       flex: 0 0 22%;
       margin-bottom: 0;
     }
@@ -263,6 +263,7 @@ As I mentioned earlier, this is a unique component and nothing like we've built 
   margin: 50px auto 0;
   text-align: center;
 }
+
 ```
 {% endtab %}
 {% endtabs %}
