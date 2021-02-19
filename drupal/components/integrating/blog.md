@@ -1,4 +1,4 @@
-# Latest blogs
+# From our blog
 
 Now let's work on integrating an entire section of components. We just integrated the individual cards so each blog post is displayed using the card variant we selected. Let's now integrate the **Latest Blog Posts** section so we get the cards aligned in a row.
 
@@ -22,7 +22,7 @@ The process for discovering the templates Drupal's views are using is the same a
 2. Right-click on any of the posts within the **Latest Blog Posts** list and select **Inspect** or **Inspect Element** depending on your browser.
 3. Within the code inspector, scroll up until you find template suggestions starting with **views-view--**. Example:
 
-![Views twig templates](https://github.com/mediacurrent/dell_training/tree/b5b572bd304e413ed14487968c53d2874f302827/drupal/components/.gitbook/assets/views.png)
+![](../../../.gitbook/assets/views.png)
 
 As we read in the excerpt above, there are usually two views templates using when rendering content, the first one I'd like to think of as the wrapper for the view and the second one wraps the content or content rows, and its name is based on the display format used when creating the view \(i.e. unformatted\). This is what we are seeing in the screenshot above.
 
@@ -105,4 +105,3 @@ Using the same method as before to create new template suggestions, follow these
 * Now if you reload the homepage you should see the Latest Blog Posts section nicely styled.
 
 Next we will repeat the steps above with the **Featured content** section.
-
