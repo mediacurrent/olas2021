@@ -63,7 +63,7 @@ npm create yo mc-d8-theme
 * After the theme has been successfully created, type the following commands from the theme's root:
 
 {% hint style="warning" %}
-**WAIT, WAIT!!!:** Time to fix Pattern Lab bugs. If new releases of Pattern Lab have been made and bugs have been addressed, you can skip step 2, but still confirm step 1 is done:
+**WAIT, WAIT!!!:** Time to fix Pattern Lab bugs. If new releases of Pattern Lab have been made and the bugs above have been addressed, you can skip step 2, but still make sure step 1 is done:
 
 1. Open `patternlab-config.json` and replace the `name` entry under `uikits` to be `"package": "@pattern-lab/uikit-workshop",`
 2. Follow the steps to [fix the bugs as shown here](https://github.com/pattern-lab/patternlab-node/releases/tag/v5.14.0).
@@ -77,11 +77,9 @@ npm run watch
 
 * Click the URL provided at the end of the last command's output \([http://localhost:3000\](http://localhost:3000%29\), to access Pattern Lab.
 
-If you wish to access Pattern Lab using Drupal's URL, use the following path:
+If you wish to access Pattern Lab using Drupal's URL, use your drupal site's URL in the following format:
 
-* [https://drupaltraining.ddev.site/themes/custom/olas\_theme/patternlab/index.html](https://drupaltraining.ddev.site)
-
-_If you don't have HTTPS enabled, use HTTP in the url above._
+* http://**drupal-url**/themes/custom/olas\_theme/patternlab/index.html
 
 ## Resources
 
