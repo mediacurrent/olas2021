@@ -1,4 +1,4 @@
-# Taxonomy terms
+# Integrate Tags
 
 Taxonomy are Drupal entities just like Nodes, blocks, etc. This means we can create view modes and custom templates so we can integrate them with Drupal. Currently we don't have a component for displaying tags. Having a dedicated component for tags will allow us to individually style them and will allow for more effective integration with Drupal. Let's quickly build one.
 
@@ -7,18 +7,11 @@ Taxonomy are Drupal entities just like Nodes, blocks, etc. This means we can cre
 The tags component is going to be a little unusual compared to other components we've built. The main reason for the way this component will be built is how Drupal handles templates for taxonomy terms and vocabularies. We will see more about this when we integrate the tag components with Drupal.
 
 1. Inside `src/patterns/components/` create a new folder called **tags**
-2. Inside the _tags_ folder create a new file called `tag-item.twig`.
-3. Inside the _tags_ folder create a new file called `tag-item.md` and add the following code:
-```
----
-hidden: true
----
-* Using a markdown file with the hidden key set to `true` allows [Pattern Lab to ignore the file](https://patternlab.io/docs/hiding-patterns-in-the-navigation/).  We don't need to see an individual tag in Pattern Lab, we want to see the full collection of tags.  More on this shortly.
-
-4. Add the following code inside `tag-item.twig`
+2. Inside the _tags_ folder create a new file called `tag-item.twig` \(_notice the underscore in the file name_\).  Using an underscore in-front of a twig file name allows [Pattern Lab to ignore the file](https://patternlab.io/docs/hiding-patterns-in-the-navigation/).  We don't need to see an individual tag in Pattern Lab, we want to see the full collection of tags.  More on this shortly.
+3. Add the following code inside `tag-item.twig`
 
 {% tabs %}
-{% tab title="tag-item.twig" %}
+{% tab title="\tag-item.twig" %}
 ```php
 <span{% if attributes %} class="{{ attributes.class }}"{% endif %}
   {{- attributes ? attributes|without(class) -}}>
@@ -219,7 +212,7 @@ If you recall when we built the Tags component above we did it in two steps, fir
 1. Inspect the tags found in the homepage From our blog section \(right-click + Inspect\)
 2. Identify the twig template suggestions for taxonomy.  This will be the template for the individual tag item.
 
-![Taxonomy term template suggestions.](../../.gitbook/assets/term.png)
+![](../../../.gitbook/assets/term.png)
 
 The first template suggestions above give us 3 options. We are going to name our template `taxonomy-term--tags.html.twig`.
 
@@ -232,7 +225,7 @@ Don't forget to clear Drupal's cache every time you add a new template to your t
 
 The next template we need will be found just above the first one. The code looks like this:
 
-![Tags field info.](../../.gitbook/assets/taxonomy-field.png)
+![](../../../.gitbook/assets/taxonomy-field.png)
 
 As I mentioned before, we only want to affect tags that appear on blog posts. Looking at the list of options for template suggestions I can see that `field--node--field-blog-tags--blog.html.twig` \(top one\), is the one that gives us the more specific target. This template is for the Tags field in the blog content type and at the end it includes the view mode we just created for the Tags vocabulary, **blog**.
 
