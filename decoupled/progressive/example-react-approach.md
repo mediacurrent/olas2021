@@ -3,6 +3,35 @@
 This is an approach to interspersing twig blocks and react components.
 
 {% tabs %}
+{% tab title="" %}
+```php
+<?php
+
+namespace Drupal\components\Plugin\Block;
+
+/**
+ * Provides a 'Profile' block.
+ *
+ * @Block(
+ *  id = "profile",
+ *  admin_label = @Translation("Profile"),
+ * )
+ */
+class MemberProfileInfo extends PhysicianPatientProfileInfo {
+
+  /**
+   * {@inheritdoc}
+   */
+  public function build() {
+    $build = parent::build();
+    $build['profile'][1]['#attributes']->setAttribute('id', 'profile');
+    return $build;
+  }
+
+}
+```
+{% endtab %}
+
 {% tab title="root.tsx" %}
 ```tsx
 import React, { ReactElement, ReactNode, useEffect } from 'react';
