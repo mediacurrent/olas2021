@@ -72,6 +72,7 @@
   * [Benefits and Drawbacks](decoupled/progressive/benefits-drawbacks.md)
   * [JSON:API](decoupled/progressive/jsonapi.md)
   * [Code Mixing](decoupled/progressive/code-mixing.md)
+  * [Example React Portals](decoupled/progressive/example-react-approach.md)
   * [Tips](decoupled/progressive/tips.md)
 
 ## DevOps
