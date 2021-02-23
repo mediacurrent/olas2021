@@ -3,7 +3,7 @@
 This is an approach to interspersing twig blocks and react components.
 
 {% tabs %}
-{% tab title="" %}
+{% tab title="Profile.php" %}
 ```php
 <?php
 
