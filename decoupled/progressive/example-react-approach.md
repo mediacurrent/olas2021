@@ -3,7 +3,7 @@
 This is an approach to interspersing twig blocks and react components.
 
 {% tabs %}
-{% tab title="card.twig" %}
+{% tab title="root.tsx" %}
 ```tsx
 import React, { ReactElement, ReactNode, useEffect } from 'react';
 import ReactDOM from 'react-dom';
