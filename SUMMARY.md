@@ -42,6 +42,11 @@
 
 ## Decoupled
 
+* [Progressive Decoupled](decoupled/progressive/benefits-drawbacks.md)
+  * [JSON:API](decoupled/progressive/jsonapi.md)
+  * [Code Mixing](decoupled/progressive/code-mixing.md)
+  * [Example React Portals](decoupled/progressive/example-react-approach.md)
+  * [Tips](decoupled/progressive/tips.md)
 * [Full decoupled](decoupled/full/README.md)
   * [React and Gatsby](decoupled/full/react-gatsby/README.md)
     * [GraphQL](decoupled/full/react-gatsby/graphql.md)
@@ -68,12 +73,6 @@
     * [Using the GraphQL playground](decoupled/full/data-graphql/playground.md)
   * [CreatePages Function](decoupled/full/createpages/README.md)
     * [Create a template](decoupled/full/createpages/create-a-template.md)
-* [Progressive Decoupled](decoupled/progressive/README.md)
-  * [Benefits and Drawbacks](decoupled/progressive/benefits-drawbacks.md)
-  * [JSON:API](decoupled/progressive/jsonapi.md)
-  * [Code Mixing](decoupled/progressive/code-mixing.md)
-  * [Example React Portals](decoupled/progressive/example-react-approach.md)
-  * [Tips](decoupled/progressive/tips.md)
 
 ## DevOps
 
