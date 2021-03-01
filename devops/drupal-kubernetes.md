@@ -3,6 +3,9 @@
 - Concepts
     - API based
     - Self-healing, declarative
+    - Containers are immutable (Docker container registries)
+    - Stateless by default
+    - Load balancers and ingress
     - Services
     - Deployments
     - Pods
