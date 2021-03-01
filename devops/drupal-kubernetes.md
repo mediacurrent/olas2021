@@ -10,6 +10,8 @@
     - Deployments
     - Pods
     - Nodes
+    - Helm (package manager)
+        - https://github.com/bitnami/charts/tree/master/bitnami/drupal/
 - Pitfalls
     - Public/private files
     - Databases
