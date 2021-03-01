@@ -76,7 +76,11 @@
 
 ## DevOps
 
-* [DevOps](devops/devops.md)
+* [Local Environments](devops/local-environments.md)
+* [SonarQube](devops/sonarqube.md)
+* [Automated Testing](devops/automated-testing.md)
+* [Drupal + Docker](devops/drupal-docker.md)
+* [Drupal + Kubernetes](devops/drupal-kubernetes.md)
 
 ## Resources
 
