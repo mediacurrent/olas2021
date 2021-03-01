@@ -1,5 +1,8 @@
 # Drupal + Kubernetes
 
+- [Drupal Hosted on Kubernetes](https://www.youtube.com/watch?v=GJSWU1JDaII)
+- [Running Drupal on Kubernetes the "Easy Way"](https://www.youtube.com/watch?v=2R-OFmCOp34)
+
 - Concepts
     - API based
     - Self-healing, declarative
