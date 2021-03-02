@@ -110,3 +110,150 @@ class FeatureContext implements SnippetAcceptingContext
     }
 }
 ```
+
+# Integration into pipelines
+
+Once your tests have been written, you can tie them into build pipelines for any CI/CD solution. Many CI tools use a step process and are based on Docker images.
+
+## Gitlab CI/CD
+
+For Gitlab, see [this article](https://www.adcisolutions.com/knowledge/continuous-integration-drupal-8-and-gitlab-cicd) for a quick and thorough example of building and testing Drupal using Gitlab's CI.
+
+## Bitbucket Pipelines
+
+We use Bitbucket Pipelines in our testing. For example:
+
+```yaml
+
+image: mediacurrent/mc-bb-pipelines:latest
+
+pipelines:
+  default:
+    - step:
+        caches:
+          - composer
+          - composer-project-vendor
+        script:
+          - uname -a
+          - php --version
+          - source /root/.bashrc
+          - composer selfupdate
+          - composer validate --no-check-all --no-check-publish
+          - composer --verbose install
+          - ls -l ./vendor/bin
+          - ./vendor/bin/behat --version
+          - ./vendor/bin/drush version
+          - ./vendor/bin/phpunit --version
+          - composer robo --version
+          - composer robo list
+          - composer robo project:init tests.site.local 127.0.0.1
+          # Drupal coding standards test on custom modules
+          - echo "Coding Standards"
+          - ./tests/code-sniffer.sh ./docroot
+          # Unit tests.
+          - echo "PHPUnit unit tests"
+          - if [ "$(ls -A docroot/modules/custom/)" ]; then
+          - composer robo test:php-unit-tests
+          - fi
+          # Drupal 9 readiness checks.
+          - echo "Drupal-check custom modules for Drupal 9 readiness"
+          - if [ "$(ls -A docroot/modules/custom/)" ]; then
+          - ./vendor/bin/drupal-check ./docroot/modules/custom/
+          - fi
+          # Output domain to hosts file.
+          - printf "127.0.0.1 tests.site.local" >> /etc/hosts
+          - cd ./docroot
+          # Set script to continue on failure.
+          - set +e
+          # Check for pending security updates.
+          - PMSECURITY=$(../vendor/bin/drush pm:security 2>&1)
+          - echo ${PMSECURITY}
+          - if grep -vq '[success]' <<< ${PMSECURITY} ; then
+          - exit 1
+          - fi
+          # Set script to stop on failure.
+          - set -e
+          # Install site using options to disable email notification.
+          - echo "\$config['system.mail']['interface']['default'] = 'test_mail_collector';" >> ./sites/default/settings.php
+          - /usr/bin/env PHP_OPTIONS="-d sendmail_path=$(which true)" ../vendor/bin/drush site-install mis_profile install_configure_form.enable_update_status_module=NULL install_configure_form.enable_update_status_emails=NULL --verbose --yes --db-url=mysql://drupal:drupal@127.0.0.1:3306/drupal
+          - ../vendor/bin/drush status
+          - ../vendor/bin/drush sget system.test_mail_collector
+          - ../vendor/bin/drush sql-dump --extra-dump=--no-tablespaces > ../vendor/bin/db.sql
+          - cd ..
+        services:
+          - mysql
+        artifacts:
+          - bin/*
+          - tests/**
+          - vendor/**
+          - docroot/**
+    - parallel:
+      - step:
+          script:
+            - ls -l
+            - ls -l ./vendor/bin
+            - cd docroot
+            - ../vendor/bin/drush sqlc < ../vendor/bin/db.sql
+            - ../vendor/bin/drush status
+            - ../vendor/bin/drush -vvv --debug runserver 8080 &
+            - sleep 3
+            - cd ..
+            # Drupal accessibility tests
+            - echo "Accessibility tests"
+            - pa11y --version
+            - ./tests/pa11y/pa11y-review.sh http://127.0.0.1:8080/themes/contrib/rain_theme/dist/style-guide/section-components.html
+            # Drupal behat tests
+            - echo "Behat tests"
+            - ./tests/behat/behat-run.sh http://127.0.0.1:8080
+          services:
+            - mysql
+      - step:
+          caches:
+            - docker
+          script:
+            - cd docroot
+            - ../vendor/bin/drush sqlc < ../vendor/bin/db.sql
+            - ../vendor/bin/drush status
+            - ../vendor/bin/drush -vvv --debug runserver 172.17.0.1:8080 &
+            - cd ..
+            # OWASP Zap Baseline report
+            - echo "OWASP ZAP Baseline report"
+            - docker version
+            # Set script to continue on failure.
+            - set +e
+            - ln -s $(pwd) /zap/wrk
+            - ls -l /zap/wrk/
+            - CMD=$(/zap/zap-baseline.py -d -c owasp-zap.conf -p owasp-zap-progress.json -t http://172.17.0.1:8080) && echo ${CMD}|| ( slackcli -h alerts-mis-devops -e ":lock:" -m "https://bitbucket.org/mediacurrent/${BITBUCKET_REPO_SLUG}/addon/pipelines/home#!/results/$BITBUCKET_BUILD_NUMBER - ${BITBUCKET_BRANCH} - OWASP Zap Baseline report \`\`\`${CMD}\`\`\`" && echo ${CMD} && exit 1 )
+            # Set script to stop on failure.
+            - set -e
+            # Run Security Review checks
+            - cd docroot
+            # Check security review.
+            - ../vendor/bin/drush en security_review
+            - SECURITYREVIEW=$(../vendor/bin/drush secrev --skip=failed_logins,file_perms,views_access,trusted_hosts,field 2>&1)
+            - echo ${SECURITYREVIEW}
+            - if grep -q 'failed' <<< ${SECURITYREVIEW} ; then
+            - exit 1
+            - fi
+          services:
+            - docker
+            - mysql
+
+definitions:
+  caches:
+    composer-project-vendor: vendor/
+    visual-regression-ci-reference: tests/visual-regression/backstop_data/ci_reference
+    visual-regression-node-modules: tests/visual-regression/node_modules
+  services:
+    docker:
+      memory: 2048
+    mysql:
+      image: mysql:5.7
+      environment:
+        MYSQL_DATABASE: 'drupal'
+        MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
+        MYSQL_USER: 'drupal'
+        MYSQL_PASSWORD: 'drupal'
+
+```
+
