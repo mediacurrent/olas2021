@@ -18,6 +18,10 @@
 - Pitfalls
     - Public/private files
     - Databases
+    - Local development
+        - https://devspace.sh/
+        - https://skaffold.dev/
+        - https://draft.sh/
 - Local, On-Prem, and Managed Hosting
     - Local allows devs to exactly match dev/stage/prod
     - On-Prem gives most control, but most overhead
