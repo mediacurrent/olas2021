@@ -23,9 +23,9 @@
         - https://skaffold.dev/
         - https://draft.sh/
 - Local, On-Prem, and Managed Hosting
-    - Local allows devs to exactly match dev/stage/prod
-    - On-Prem gives most control, but most overhead
-    - Managed (GKE, EKS, AKS) allow for a middle ground
+    - **Local** allows devs to exactly match dev/stage/prod. Requires a good file sync strategy for fast builds.
+    - **On-Prem** gives most control, but most overhead. Requires deep understanding of Kubernetes internals and how to build a cluster using tools such as Kubeadm to initialize cluster control planes and have new nodes join the cluster.
+    - **Managed** services such as Google Kubernetes Engine (GKE), Amazon Elastic Kubernetes Service (EKS), and Azure Kubernetes Service (AKS) allow for utilizing Kubernetes for deep control of your infrastructure while abstracting away the setup and maintenance required to create a cluster and manage its control plane.
 
 # Local Example
 
