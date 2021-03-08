@@ -1,18 +1,18 @@
-# Date formats
+# Date format
 
-We are using a specific date form which we can achieve by creating a custom date format in Drupal.  Or, we could edit one of the existing date formats that come with Drupal core.
+We are using a specific date form which we can achieve by creating a custom date format in Drupal. Or, we could edit one of the existing date formats that come with Drupal core.
 
 1. In Drupal, click on **Configuration &gt; Regional and language &gt; Date and time formats**
 2. Click **Edit** next to **Default long date**
 3. In the **Format string** field, update its value with `l, F j, Y`
 4. Click **Save format**
-6. Save your changes.
+5. Save your changes.
 
 {% hint style="info" %}
-Drupal uses PHP date formats.  [Learn more ](https://www.php.net/manual/en/function.date.php)about these formats.
+Drupal uses PHP date formats. [Learn more ](https://www.php.net/manual/en/function.date.php)about these formats.
 {% endhint %}
 
-### Update the date format in the teaser template
+## Update the date format in the teaser template
 
 Now that we've updated Drupal's date formats, let's make use of it.
 
@@ -28,7 +28,7 @@ Now that we've updated Drupal's date formats, let's make use of it.
 
 * We are setting a variable for date to change its format to the **long** format we just setup.
 
-### Full integration code
+## Full integration code
 
 Now the full integration template should look like below. Clear Drupal's cache again and reload the homepage. The date format on the articles using the card should now match our designs.
 
@@ -81,4 +81,5 @@ and make use of twig blocks found in such component.
 {% endtab %}
 {% endtabs %}
 
-If you save your changes and reload Drupal's homepage \(you may need to clear caches\), you will see the date now shows in the right format.  Now let's fix the tags issues.
+If you save your changes and reload Drupal's homepage \(you may need to clear caches\), you will see the date now shows in the right format. Now let's fix the tags issues.
+

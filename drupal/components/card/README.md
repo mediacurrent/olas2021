@@ -19,7 +19,7 @@ We'll get back to the full view of a blog post later, for now we are going to fo
 2. Right-click on any of the Blog posts articles and select **Inspect** or **Inspect Element**
 3. Scroll up in the inspector's code until you find the `<article>` element that wraps the entire article you clicked on.  There may be multiple `<article>` tags within each article, but ensure you are looking at the main article wrapper.  See screenshot below \(click on it to zoom in\):
 
-![](../../../.gitbook/assets/node-teaser%20%281%29.png)
+![](../../../.gitbook/assets/node-teaser%20%281%29%20%281%29%20%281%29.png)
 
 * I've marked a couple of important items in the screenshot above to ensure you are looking at the correct section in the code.
 * **THEME HOOK:** Tells you what entity you are currently looking at.  In this example we are looking at the **node**, which is what we want since we are trying to configure the Blog nodes with the right component.
@@ -205,3 +205,4 @@ Now that the card integration is complete, let's take a look at how the blog nod
 ## Date format issue
 
 The card looks great but it looks like the date format does not match our designs. Also the tags are not styled at all. Let's fix these two issues.
+

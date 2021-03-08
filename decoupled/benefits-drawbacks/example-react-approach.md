@@ -1,4 +1,4 @@
-# Example Approach Using React Portals and Drupal Blocks.
+# Example React Portals
 
 This is an approach to interspersing twig blocks and react components.
 
@@ -33,7 +33,7 @@ class MemberProfileInfo extends PhysicianPatientProfileInfo {
 {% endtab %}
 
 {% tab title="root.tsx" %}
-```tsx
+```text
 import React, { ReactElement, ReactNode, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 
@@ -92,8 +92,7 @@ main();
 {% endtab %}
 
 {% tab title="components.ts" %}
-```tsx
-
+```text
 import Profile from '../components/profile/profile.component';
 import Settings from '../components/settings/settings.component';
 
@@ -115,3 +114,4 @@ export const components: Component[] = [
 ```
 {% endtab %}
 {% endtabs %}
+

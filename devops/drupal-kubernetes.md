@@ -1,55 +1,56 @@
 # Drupal + Kubernetes
 
-- [Drupal Hosted on Kubernetes](https://www.youtube.com/watch?v=GJSWU1JDaII)
-- [Running Drupal on Kubernetes the "Easy Way"](https://www.youtube.com/watch?v=2R-OFmCOp34)
+## Drupal + Kubernetes
 
-- Concepts
-    - API based
-    - Self-healing, declarative
-    - Containers are immutable (Docker container registries)
-    - Stateless by default
-    - Load balancers and ingress
-    - Services
-    - Deployments
-    - Pods
-    - Nodes
-    - Helm (package manager)
-        - https://github.com/bitnami/charts/tree/master/bitnami/drupal/
-- Pitfalls
-    - Public/private files
-    - Databases
-    - Local development
-        - https://devspace.sh/
-        - https://skaffold.dev/
-        - https://draft.sh/
-- Local, On-Prem, and Managed Hosting
-    - **Local** allows devs to exactly match dev/stage/prod. Requires a good file sync strategy for fast builds.
-    - **On-Prem** gives most control, but most overhead. Requires deep understanding of Kubernetes internals and how to build a cluster using tools such as Kubeadm to initialize cluster control planes and have new nodes join the cluster.
-    - **Managed** services such as Google Kubernetes Engine (GKE), Amazon Elastic Kubernetes Service (EKS), and Azure Kubernetes Service (AKS) allow for utilizing Kubernetes for deep control of your infrastructure while abstracting away the setup and maintenance required to create a cluster and manage its control plane.
+* [Drupal Hosted on Kubernetes](https://www.youtube.com/watch?v=GJSWU1JDaII)
+* [Running Drupal on Kubernetes the "Easy Way"](https://www.youtube.com/watch?v=2R-OFmCOp34)
+* Concepts
+  * API based
+  * Self-healing, declarative
+  * Containers are immutable \(Docker container registries\)
+  * Stateless by default
+  * Load balancers and ingress
+  * Services
+  * Deployments
+  * Pods
+  * Nodes
+  * Helm \(package manager\)
+    * [https://github.com/bitnami/charts/tree/master/bitnami/drupal/](https://github.com/bitnami/charts/tree/master/bitnami/drupal/)
+* Pitfalls
+  * Public/private files
+  * Databases
+  * Local development
+    * [https://devspace.sh/](https://devspace.sh/)
+    * [https://skaffold.dev/](https://skaffold.dev/)
+    * [https://draft.sh/](https://draft.sh/)
+* Local, On-Prem, and Managed Hosting
+  * **Local** allows devs to exactly match dev/stage/prod. Requires a good file sync strategy for fast builds.
+  * **On-Prem** gives most control, but most overhead. Requires deep understanding of Kubernetes internals and how to build a cluster using tools such as Kubeadm to initialize cluster control planes and have new nodes join the cluster.
+  * **Managed** services such as Google Kubernetes Engine \(GKE\), Amazon Elastic Kubernetes Service \(EKS\), and Azure Kubernetes Service \(AKS\) allow for utilizing Kubernetes for deep control of your infrastructure while abstracting away the setup and maintenance required to create a cluster and manage its control plane.
 
-# Local Example
+## Local Example
 
 For this example deployment, we have several files that need to be created and run.
 
-## Set up the nginx ingress controller
+### Set up the nginx ingress controller
 
 In order to route requests for a specific hostname to our service, we'll need an nginx ingress controller installed to our cluster. This can be done with the following command:
 
-```
+```text
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.44.0/deploy/static/provider/cloud/deploy.yaml
 ```
 
-## Files
+### Files
 
 We'll need the following files for our local cluster:
 
-- ingress.yaml
-- volumes.yaml
-- drupal-deployment.yaml
-- mysql-deployment.yaml
-- kustomization.yaml
+* ingress.yaml
+* volumes.yaml
+* drupal-deployment.yaml
+* mysql-deployment.yaml
+* kustomization.yaml
 
-### ingress.yaml
+#### ingress.yaml
 
 ```yaml
 ---
@@ -71,7 +72,7 @@ spec:
               number: 8081
 ```
 
-### volumes.yaml
+#### volumes.yaml
 
 ```yaml
 ---
@@ -112,7 +113,7 @@ spec:
   storageClassName: drupal-volume
 ```
 
-### drupal-deployment.yaml
+#### drupal-deployment.yaml
 
 ```yaml
 ---
@@ -194,7 +195,7 @@ spec:
             claimName: drupal-claim
 ```
 
-### mysql-deployment.yaml
+#### mysql-deployment.yaml
 
 ```yaml
 ---
@@ -255,7 +256,7 @@ spec:
             claimName: mysql-claim
 ```
 
-### kustomization.yaml
+#### kustomization.yaml
 
 ```yaml
 ---
@@ -274,24 +275,25 @@ resources:
 # Pass: MySQLpassword
 ```
 
-## Running the cluster
+### Running the cluster
 
 Putting those all together, you can start the cluster with the following commands:
 
-```
+```text
 kubectl apply -f volumes.yaml && kubectl apply -k ./
 ```
 
-## Stopping the cluster
+### Stopping the cluster
 
 To stop the services
 
-```
+```text
 kubectl delete -k ./
 ```
 
 To delete the persistent volumes
 
-```
+```text
 kubectl delete -f volumes.yaml
 ```
+

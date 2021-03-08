@@ -11,7 +11,7 @@ The tags component is going to be a little unusual compared to other components 
 3. Add the following code inside `tag-item.twig`
 
 {% tabs %}
-{% tab title="\tag-item.twig" %}
+{% tab title="\\tag-item.twig" %}
 ```php
 <span{% if attributes %} class="{{ attributes.class }}"{% endif %}
   {{- attributes ? attributes|without(class) -}}>
@@ -263,3 +263,4 @@ Go ahead and make a copy of this template from its original location into your t
 * Twig blocks to the rescue again.  We're embedding the tags component and using the `tag_item` twig block to pass the template's variables so they match what Drupal expects.
 
 Now if you save your changes and clear Drupal's cache, reload the homepage and the regular cards will now displayed as shown in our designs.
+

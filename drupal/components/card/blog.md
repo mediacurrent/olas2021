@@ -105,3 +105,4 @@ Using the same method as before to create new template suggestions, follow these
 * Now if you reload the homepage you should see the Latest Blog Posts section nicely styled.
 
 Next we will repeat the steps above with the **Featured content** section.
+
