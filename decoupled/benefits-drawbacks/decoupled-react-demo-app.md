@@ -8,3 +8,11 @@ The premese of the app was to build a component-based app that can be individual
 
 Below are the resources where you can grab the codebase for this app.
 
+
+
+{% hint style="info" %}
+**Progressive Decouple Block Module:**  In addition to the code presented by our team during this training, a former team member also wrote a contrib drupal module called [Progressive Decouple Block](https://www.drupal.org/project/pdb).  This module was written with Angular in mind and takes advantage of Drupal's block to mount Angular apps.
+{% endhint %}
+
+Along with the module above, you will find a full Drupal project running this approach which you can take a look and experiment with: [https://github.com/mark-casias/decoupled-blocks-drupal-vm](https://github.com/mark-casias/decoupled-blocks-drupal-vm)
+
