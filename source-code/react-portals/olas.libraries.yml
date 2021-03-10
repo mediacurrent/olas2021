@@ -1,0 +1,7 @@
+global:
+  js:
+    js/script.js: {}
+
+react:
+  js:
+    dist/bundle.js: { minified: true }
